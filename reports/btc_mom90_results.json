@@ -1,0 +1,158 @@
+{
+  "strategy": "BTC 90d time-series momentum, long-only, 1x, daily, next-open execution",
+  "data": {
+    "rows": 3359,
+    "start": "2017-08-17",
+    "end": "2026-10-27",
+    "duplicates": 0,
+    "unsorted": 0,
+    "bad_ohlc": 0,
+    "calendar_gaps": 0,
+    "gap_samples": []
+  },
+  "costs": {
+    "fee_per_side": 0.001,
+    "slippage_per_side": 0.0005,
+    "roundtrip": 0.003
+  },
+  "capital": 100.0,
+  "lookback": 90,
+  "full": {
+    "label": "full",
+    "lookback": 90,
+    "days": 3358,
+    "bars": 3359,
+    "total_return": 9.73511,
+    "cagr": 0.294328,
+    "volatility": 0.488924,
+    "sharpe": 0.7775,
+    "max_drawdown": 0.667086,
+    "trades": 59,
+    "wins": 21,
+    "losses": 38,
+    "win_rate": 0.3559,
+    "profit_factor": 2.1055,
+    "total_costs_usd": 80.386,
+    "time_in_market": 0.5308
+  },
+  "full_benchmark_bh": {
+    "days": 3358,
+    "total_return": 17.957871,
+    "cagr": 0.376861,
+    "volatility": 0.666083,
+    "sharpe": 0.8166,
+    "max_drawdown": 0.831871,
+    "final_equity": 1895.7871
+  },
+  "full_benchmark_cash": {
+    "days": 3358,
+    "total_return": 0.0,
+    "cagr": 0.0,
+    "volatility": 0.0,
+    "sharpe": 0.0,
+    "max_drawdown": 0.0,
+    "final_equity": 100.0
+  },
+  "oos": {
+    "label": "oos",
+    "lookback": 90,
+    "days": 1030,
+    "bars": 1031,
+    "total_return": 0.143907,
+    "cagr": 0.048798,
+    "volatility": 0.280861,
+    "sharpe": 0.3091,
+    "max_drawdown": 0.277366,
+    "trades": 14,
+    "wins": 5,
+    "losses": 9,
+    "win_rate": 0.3571,
+    "profit_factor": 1.3013,
+    "total_costs_usd": 4.4411,
+    "time_in_market": 0.4811
+  },
+  "oos_benchmark_bh": {
+    "days": 1030,
+    "total_return": 0.910637,
+    "cagr": 0.257885,
+    "volatility": 0.467882,
+    "sharpe": 0.6911,
+    "max_drawdown": 0.529718,
+    "final_equity": 191.0637
+  },
+  "oos_benchmark_cash": {
+    "days": 1030,
+    "total_return": 0.0,
+    "cagr": 0.0,
+    "volatility": 0.0,
+    "sharpe": 0.0,
+    "max_drawdown": 0.0,
+    "final_equity": 100.0
+  },
+  "robustness": [
+    {
+      "lookback": 60,
+      "full_cagr": 0.484099,
+      "full_mdd": 0.605919,
+      "full_sharpe": 1.0747,
+      "full_trades": 80,
+      "oos_return": 0.270557,
+      "oos_cagr": 0.08856,
+      "oos_sharpe": 0.4287,
+      "oos_mdd": 0.379732
+    },
+    {
+      "lookback": 75,
+      "full_cagr": 0.454281,
+      "full_mdd": 0.674333,
+      "full_sharpe": 1.0184,
+      "full_trades": 49,
+      "oos_return": 0.850156,
+      "oos_cagr": 0.243627,
+      "oos_sharpe": 0.8764,
+      "oos_mdd": 0.237783
+    },
+    {
+      "lookback": 90,
+      "full_cagr": 0.294328,
+      "full_mdd": 0.667086,
+      "full_sharpe": 0.7775,
+      "full_trades": 59,
+      "oos_return": 0.143907,
+      "oos_cagr": 0.048798,
+      "oos_sharpe": 0.3091,
+      "oos_mdd": 0.277366
+    },
+    {
+      "lookback": 105,
+      "full_cagr": 0.141324,
+      "full_mdd": 0.772596,
+      "full_sharpe": 0.5202,
+      "full_trades": 64,
+      "oos_return": -0.14846,
+      "oos_cagr": -0.055359,
+      "oos_sharpe": -0.0751,
+      "oos_mdd": 0.442205
+    },
+    {
+      "lookback": 120,
+      "full_cagr": 0.195183,
+      "full_mdd": 0.69786,
+      "full_sharpe": 0.6158,
+      "full_trades": 52,
+      "oos_return": 0.086094,
+      "oos_cagr": 0.029699,
+      "oos_sharpe": 0.2425,
+      "oos_mdd": 0.2921
+    }
+  ],
+  "checks": {
+    "oos_return_positive": true,
+    "oos_sharpe_gt_0.5": false,
+    "max_drawdown_le_30pct": false,
+    "advantage_vs_bh": true,
+    "robustness_ok": false,
+    "data_and_timing_ok": true
+  },
+  "all_checks_passed": false
+}
