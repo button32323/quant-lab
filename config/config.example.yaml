@@ -1,0 +1,20 @@
+# 配置模板（不含任何密钥，复制为 config/local.yaml 使用，local 已被 gitignore）
+
+data:
+  dir: data
+  cache_dir: data/cache
+
+api:
+  hyperliquid:
+    timeout_seconds: 15
+    retries: 3
+
+costs:
+  taker_bps: 4.5
+  maker_bps: 1.5
+  slippage_bps: 5.0
+
+risk:
+  max_leverage: 1.0
+  max_drawdown: 0.05
+  daily_loss_stop: 0.02

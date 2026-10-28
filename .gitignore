@@ -1,0 +1,33 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# 虚拟环境
+.venv/
+venv/
+
+# 数据与本地状态（不入库）
+data/**
+!data/README.md
+*.csv
+*.parquet
+*.feather
+*.json.gz
+*.log
+
+# 密钥/配置（绝不入库）
+.env
+.env.*
+secrets/
+*.key
+*.pem
+wallets/
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
