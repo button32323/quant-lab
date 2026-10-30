@@ -34,6 +34,8 @@ while ($true) {
     if ($i % 24 -eq 0) {
         $out2 = & $py $script reconcile 2>&1
         L "reconcile exit=$LASTEXITCODE :: $((($out2 -join ' ') -replace '\s+',' ').Trim())"
+        $out3 = & $py $script final 2>&1
+        L "final exit=$LASTEXITCODE :: $((($out3 -join ' ') -replace '\s+',' ').Trim())"
     }
     # 对齐到下一个整点后 75 秒（确保该整点资金费已可查）
     $now = Get-Date

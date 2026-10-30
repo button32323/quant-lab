@@ -1,4 +1,4 @@
-﻿"""Paper 交易引擎：Hyperliquid 现货-永续资金费 carry（PURR + HYPE）。
+"""Paper 交易引擎：Hyperliquid 现货-永续资金费 carry（PURR + HYPE）。
 
 只读公开 API、虚拟资金、无账户/密钥。逐小时增量更新资金费与 NAV。
 """
@@ -24,6 +24,8 @@ STATE = PAPER_DIR / "state.json"
 HOURLY = PAPER_DIR / "hourly.csv"
 REPORT = PAPER_DIR / "REPORT.md"
 RECONCILE = PAPER_DIR / "reconcile.json"
+ALERTS = PAPER_DIR / "ALERTS.md"
+FINAL = PAPER_DIR / "FINAL_REPORT.md"
 
 ASSETS = {
     "PURR": {"spot_pair": "PURR/USDC", "perp": "PURR", "max_lev": 3.0},
@@ -309,6 +311,43 @@ def write_report(state: dict) -> None:
     lines += ["", "> paper 模拟盘：公开数据、虚拟资金，不涉及真实订单。"]
     REPORT.write_text("\n".join(lines), encoding="utf-8")
 
+    # 风险告警文件
+    alerts = []
+    if mdd > 0.05:
+        alerts.append(f"最大回撤 {mdd*100:.2f}% > 5% 阈值（应停止）")
+    for asset, log in state.get("settlements_log", {}).items():
+        streak = latest_negative_streak([r["rate"] for r in log])
+        if streak >= 12:
+            alerts.append(f"{asset} 连续 {streak} 次负资金费（≥12 次阈值，应平仓）")
+    ALERTS.write_text("\n".join(["# Paper 告警", ""] + (alerts if alerts else ["无告警（OK）"])) + "\n", encoding="utf-8")
+
+
+def write_final_report() -> dict:
+    """生成最终 paper 报告（30 天到期时使用）。"""
+    state = load_state()
+    g = evaluate_gate(state)
+    navs = []
+    if HOURLY.exists():
+        with HOURLY.open(encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                try:
+                    navs.append(float(r["nav_usd"]))
+                except (TypeError, ValueError):
+                    continue
+    lines = [
+        "# Paper 最终报告（30 天）", "",
+        f"- 状态：**{g['status']}** ｜ 已运行 {g['days_elapsed']:.2f} 天",
+        f"- 期初 ${state['capital_usd']:.2f} → 期末 NAV ${g['nav_usd']:.2f}（{g['return_pct']:+.3f}%）",
+        f"- 年化（含建仓成本）：{g['annualized_pct'] if g['annualized_pct'] is not None else 'n/a'}% ｜ 纯资金费年化：{g['funding_only_annualized_pct']:+.3f}%",
+        f"- 最大回撤：{g['max_drawdown_pct']:.3f}% ｜ 资金费结算 {g['funding_settlements']} 次，正费率占比 {g['funding_positive_share']*100:.1f}%",
+        "", "## 门禁检查", "", "| 检查项 | 结果 |", "|---|---|",
+    ]
+    for k, v in g["checks"].items():
+        lines.append(f"| {k} | {'✅' if v else '❌'} |")
+    lines += ["", "> 结论以 PASS/FAIL 为准；若 FAIL，记录原因（环境/执行），不修改参数重跑同一段数据。"]
+    FINAL.write_text("\n".join(lines), encoding="utf-8")
+    return g
+
 
 def main(argv: list[str]) -> int:
     cmd = argv[1] if len(argv) > 1 else "status"
@@ -319,6 +358,8 @@ def main(argv: list[str]) -> int:
         print(json.dumps(run_once(), ensure_ascii=False))
     elif cmd == "reconcile":
         print(json.dumps(reconcile(), ensure_ascii=False, indent=2))
+    elif cmd == "final":
+        print(json.dumps(write_final_report(), ensure_ascii=False, indent=2))
     elif cmd == "gate":
         print(json.dumps(evaluate_gate(load_state()), ensure_ascii=False, indent=2))
     elif cmd == "status":
@@ -334,6 +375,7 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv))
+
 
 
 
