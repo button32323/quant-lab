@@ -35,5 +35,17 @@ if (Test-Path $hb) {
     Check ("heartbeat recent (<6h): " + $last) (((Get-Date) - $last).TotalHours -lt 6)
 } else { Check "heartbeat exists" $false }
 
+Write-Output "`n=== 密钥泄露扫描（tracked files）"
+Push-Location $proj
+$secretHits = git grep -nE "BEGIN [A-Z ]*PRIVATE KEY|0x[0-9a-fA-F]{64}|[a-z]+ ([a-z]+ ){11,23}[a-z]+" -- . 2>$null
+Pop-Location
+if ($secretHits) {
+    Write-Output "疑似密钥/助记词命中："
+    $secretHits | Select-Object -First 5
+    Check "no secrets in tracked files" $false
+} else {
+    Check "no secrets in tracked files" $true
+}
+
 Write-Output "`n=== 结果"
 if ($fail -eq 0) { Write-Output "ALL CHECKS PASSED" } else { Write-Output "$fail CHECK(S) FAILED"; exit 1 }
