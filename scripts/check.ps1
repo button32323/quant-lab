@@ -51,5 +51,9 @@ Write-Output "`n=== Markdown 内部链接"
 & $py "$proj\scripts\check_links.py" 2>&1 | Select-Object -Last 3
 Check "internal links OK" ($LASTEXITCODE -eq 0)
 
+Write-Output "`n=== 报告数字一致性"
+& $py "$proj\scripts\check_reports.py" 2>&1 | Select-Object -Last 3
+Check "report numbers consistent" ($LASTEXITCODE -eq 0)
+
 Write-Output "`n=== 结果"
 if ($fail -eq 0) { Write-Output "ALL CHECKS PASSED" } else { Write-Output "$fail CHECK(S) FAILED"; exit 1 }
