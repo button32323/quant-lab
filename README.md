@@ -43,6 +43,7 @@ data/              本地数据目录（git 忽略，不入库）
 - [reports/PLAN_100_1000.md](reports/PLAN_100_1000.md) — **$100–$1,000 本金方案对比与推荐**
 - [reports/CARRY_VALIDATION.md](reports/CARRY_VALIDATION.md) — carry 稳健性/压力/Bootstrap
 - [reports/CAPACITY_TIERS.md](reports/CAPACITY_TIERS.md) — 容量与本金额度（$27–$20k）
+- [reports/SLIPPAGE_DEPTH.md](reports/SLIPPAGE_DEPTH.md) — 盘口滑点实测（L2）
 - [docs/PAPER_PLAN.md](docs/PAPER_PLAN.md) — 30 天 paper 验证计划
 
 ## 红线（写死）
@@ -56,6 +57,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 
 
 

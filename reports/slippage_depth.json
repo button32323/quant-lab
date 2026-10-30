@@ -1,0 +1,300 @@
+{
+  "instruments": {
+    "PURR_spot": {
+      "coin": "PURR/USDC",
+      "mid": 0.122225,
+      "best_bid": 0.12211,
+      "best_ask": 0.12234,
+      "spread_bps": 18.82,
+      "ask_depth_within_20bps_usd": 166.0,
+      "bid_depth_within_20bps_usd": 267.0,
+      "rows": [
+        {
+          "notional_usd": 10,
+          "buy_slip_bps": 9.41,
+          "sell_slip_bps": 9.41,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 25,
+          "buy_slip_bps": 9.41,
+          "sell_slip_bps": 9.41,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 50,
+          "buy_slip_bps": 9.41,
+          "sell_slip_bps": 9.41,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 100,
+          "buy_slip_bps": 9.41,
+          "sell_slip_bps": 9.41,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 200,
+          "buy_slip_bps": 13.38,
+          "sell_slip_bps": 10.68,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 333,
+          "buy_slip_bps": 16.67,
+          "sell_slip_bps": 14.35,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 375,
+          "buy_slip_bps": 17.24,
+          "sell_slip_bps": 15.54,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 500,
+          "buy_slip_bps": 19.72,
+          "sell_slip_bps": 21.11,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 1000,
+          "buy_slip_bps": 29.59,
+          "sell_slip_bps": 38.37,
+          "buy_fillable": true,
+          "sell_fillable": true
+        }
+      ]
+    },
+    "PURR_perp": {
+      "coin": "PURR",
+      "mid": 0.12281500000000001,
+      "best_bid": 0.12273,
+      "best_ask": 0.1229,
+      "spread_bps": 13.84,
+      "ask_depth_within_20bps_usd": 626.0,
+      "bid_depth_within_20bps_usd": 777.0,
+      "rows": [
+        {
+          "notional_usd": 10,
+          "buy_slip_bps": 6.92,
+          "sell_slip_bps": 6.92,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 25,
+          "buy_slip_bps": 6.92,
+          "sell_slip_bps": 6.92,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 50,
+          "buy_slip_bps": 6.92,
+          "sell_slip_bps": 6.92,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 100,
+          "buy_slip_bps": 7.23,
+          "sell_slip_bps": 7.36,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 200,
+          "buy_slip_bps": 9.35,
+          "sell_slip_bps": 9.74,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 333,
+          "buy_slip_bps": 12.9,
+          "sell_slip_bps": 12.54,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 375,
+          "buy_slip_bps": 13.51,
+          "sell_slip_bps": 13.37,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 500,
+          "buy_slip_bps": 14.83,
+          "sell_slip_bps": 15.01,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 1000,
+          "buy_slip_bps": 22.63,
+          "sell_slip_bps": 17.84,
+          "buy_fillable": true,
+          "sell_fillable": true
+        }
+      ]
+    },
+    "HYPE_spot": {
+      "coin": "@107",
+      "mid": 92.2525,
+      "best_bid": 92.252,
+      "best_ask": 92.253,
+      "spread_bps": 0.11,
+      "ask_depth_within_20bps_usd": 45138.0,
+      "bid_depth_within_20bps_usd": 205319.0,
+      "rows": [
+        {
+          "notional_usd": 10,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 25,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 50,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 100,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 200,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 333,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 375,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 500,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 1000,
+          "buy_slip_bps": 0.05,
+          "sell_slip_bps": 0.05,
+          "buy_fillable": true,
+          "sell_fillable": true
+        }
+      ]
+    },
+    "HYPE_perp": {
+      "coin": "HYPE",
+      "mid": 92.3145,
+      "best_bid": 92.309,
+      "best_ask": 92.32,
+      "spread_bps": 1.19,
+      "ask_depth_within_20bps_usd": 171757.0,
+      "bid_depth_within_20bps_usd": 149965.0,
+      "rows": [
+        {
+          "notional_usd": 10,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 25,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 50,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 100,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 200,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 333,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 375,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 500,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        },
+        {
+          "notional_usd": 1000,
+          "buy_slip_bps": 0.6,
+          "sell_slip_bps": 0.6,
+          "buy_fillable": true,
+          "sell_fillable": true
+        }
+      ]
+    }
+  }
+}
