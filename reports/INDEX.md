@@ -47,9 +47,10 @@
 
 ## Paper 状态
 
-- 启动：2026-10-30T16:40:40Z（虚拟 $1,000，PURR+HYPE carry）；
+- 启动：2026-10-30T16:40:40Z（虚拟 $1,000，PURR+HYPE carry），当前 NAV ≈ $997.15（建仓成本 −$3.44）；首笔资金费结算 17:00 UTC 待捕获；
 - 实时报告：[../paper/REPORT.md](../paper/REPORT.md)、最终报告 [../paper/FINAL_REPORT.md](../paper/FINAL_REPORT.md)、告警 [../paper/ALERTS.md](../paper/ALERTS.md)；
 - 30 天到期后看 gate：`python src/quantlab/paper.py gate`。
+
 
 
 
