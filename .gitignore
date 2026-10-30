@@ -1,4 +1,4 @@
-# Byte-compiled / cache
+﻿# Byte-compiled / cache
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -31,3 +31,9 @@ wallets/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# paper 运行时日志/心跳
+paper/runner.log
+paper/heartbeat.txt
+paper/STOP
+

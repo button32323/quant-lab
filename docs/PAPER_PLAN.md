@@ -1,4 +1,4 @@
-# Paper 验证计划（30 天）
+﻿# Paper 验证计划（30 天）
 
 > 目的：在不动用真实资金、不需要交易所账户的前提下，用公开数据验证 A0（PURR+HYPE 资金费 carry）的**执行细节**与**门禁条件**。
 > 当前环境提示：近 30 天资金费折算年化约 **+9.7%**（略低于 10% 门槛），paper 很可能因环境而不过关——这本身就是有效结论。
@@ -41,8 +41,18 @@
 4. 30 天后生成 `PAPER_REPORT.md` 与门禁判定；
 5. 通过才讨论实盘；不通过则记录原因（环境 or 执行），不改参数重跑同一段数据。
 
-## 5. 状态与限制
+## 5. 当前状态（2026-10-31 更新）
+
+- **已启动**：2026-10-30T16:40:40Z（本地 2026-10-31 00:40），虚拟 $1,000；
+- **到期**：2026-11-29T16:40:40Z（30 天）；
+- 运行器：`scripts/paper/paper_runner.ps1`（WMI 隐藏、每小时 run，每 24 轮 reconcile + 心跳 `paper/heartbeat.txt`）；
+- 停止方式：创建 `paper/STOP` 文件（runner 会在下一轮退出），或结束对应 powershell 进程；
+- 重启电脑后手动启动：`powershell -NoProfile -ExecutionPolicy Bypass -File "C:\量化项目\scripts\paper\paper_runner.ps1"`（隐藏窗口可自行加 `-WindowStyle Hidden`）；
+- 数据文件：`paper/state.json`、`paper/hourly.csv`、`paper/REPORT.md`、`paper/reconcile.json`。
+
+## 6. 状态与限制
 
 - 本计划只用公开数据、虚拟资金，不接触账户/密钥；
 - 当前资金费环境偏弱，paper 目标首先是验证"执行/对账"正确性，其次才是收益；
 - 30 天期间不修改参数、不挑数据、不缩短周期。
+
