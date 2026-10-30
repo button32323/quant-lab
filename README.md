@@ -1,4 +1,4 @@
-﻿# 量化项目（新）
+# 量化项目（新）
 
 > 一个从零开始的量化研究项目。原则：**数据可复现、成本口径统一、先 paper 后实盘、实盘逐笔授权**。
 
@@ -35,14 +35,6 @@ data/              本地数据目录（git 忽略，不入库）
 | `quantlab/hyperliquid.py` | Hyperliquid 公开 API（资金费、K 线、市场上下文），无需密钥 |
 | `quantlab/metrics.py` | 收益/波动/Sharpe/最大回撤等指标 |
 | `quantlab/costs.py` | 统一成本模型（taker/maker/滑点/资金费） |
-
-## 研究文档
-
-- [docs/DESIGN.md](docs/DESIGN.md) — 研究流程与原则
-- [docs/ARBITRAGE_RESEARCH.md](docs/ARBITRAGE_RESEARCH.md) — 套利类型、成功案例与可行路线
-- [reports/PLAN_100_1000.md](reports/PLAN_100_1000.md) — **$100–$1,000 本金方案对比与推荐**
-- [reports/CARRY_COMBINED.md](reports/CARRY_COMBINED.md) — 小市值+主流 carry 组合回测
-- [reports/BTC_MOM90_REPORT.md](reports/BTC_MOM90_REPORT.md) — BTC 90 日动量回测（淘汰）
 
 ## 研究文档
 
