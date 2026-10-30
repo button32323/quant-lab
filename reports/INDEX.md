@@ -1,4 +1,4 @@
-# 报告索引与核心结论
+﻿# 报告索引与核心结论
 
 > 项目：$100–$1,000 本金量化/套利方案筛选与回测验证。所有报告可复现，数据/脚本/测试均在仓库内。
 
@@ -26,6 +26,7 @@
 | [FUNDING_REGIME.md](FUNDING_REGIME.md) | 资金费环境 | 小市值负费率仅 3.6–3.8%/天；主流 12% |
 | [PAPER_PROBABILITY.md](PAPER_PROBABILITY.md) | paper 30 天通过概率 | 当前环境约 25%（近 180 天口径） |
 | [ALLOCATION_SENSITIVITY.md](ALLOCATION_SENSITIVITY.md) | PURR/HYPE 配比敏感性 | 收益 16.8–19.4%，对配比不敏感 |
+| [FUNDING_TIMING.md](FUNDING_TIMING.md) | 资金费环境分位/风控阈值 | 当前处历史偏低区间（后 10–13%） |
 | [CARRY_MULTIASSET.md](CARRY_MULTIASSET.md) | 多资产分散检验 | 加入 AZTEC/STABLE 反而恶化，维持 A0 |
 | [BTC_MOM90_REPORT.md](BTC_MOM90_REPORT.md) | BTC 90 日动量（淘汰） | 全样本 MDD 66.7%，样本外 Sharpe 0.31 |
 | [MULTI_ASSET_MOMENTUM.md](MULTI_ASSET_MOMENTUM.md) | 多资产动量（淘汰） | 样本外不如 BTC 买入持有 |
@@ -44,3 +45,4 @@
 - 启动：2026-10-30T16:40:40Z（虚拟 $1,000，PURR+HYPE carry）；
 - 实时报告：[../paper/REPORT.md](../paper/REPORT.md)、最终报告 [../paper/FINAL_REPORT.md](../paper/FINAL_REPORT.md)、告警 [../paper/ALERTS.md](../paper/ALERTS.md)；
 - 30 天到期后看 gate：`python src/quantlab/paper.py gate`。
+

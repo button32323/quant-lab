@@ -1,0 +1,35 @@
+{
+  "window": "2024-12-07 → 2026-10-23",
+  "days": 686,
+  "current": {
+    "ann_funding_30d": 0.0966,
+    "ann_funding_90d": 0.1579,
+    "ann_funding_now": 0.0859
+  },
+  "share_below_5pct": 0.0015,
+  "share_below_0": 0.0,
+  "share_above_10pct": 0.8703,
+  "buckets": {
+    "滚动30d <5%": {
+      "days": 1,
+      "share": 0.0017,
+      "fwd30_mean": 0.1453
+    },
+    "5–10%": {
+      "days": 58,
+      "share": 0.097,
+      "fwd30_mean": 0.1361
+    },
+    "10–20%": {
+      "days": 408,
+      "share": 0.6823,
+      "fwd30_mean": 0.1539
+    },
+    ">20%": {
+      "days": 131,
+      "share": 0.2191,
+      "fwd30_mean": 0.1776
+    }
+  },
+  "rule_suggestion": "若滚动30天资金费连续 14 天 < 5%/年（或任意 30 天 < 0），暂停/退出并重新评估环境；不用于预测，只用于风控。"
+}
