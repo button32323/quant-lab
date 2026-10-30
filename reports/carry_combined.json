@@ -1,0 +1,83 @@
+{
+  "window": "2024-12-07 00:00:00 → 2026-10-23 00:00:00",
+  "rows": 686,
+  "capital": 1000.0,
+  "results": {
+    "A0_small_only": {
+      "weights": {
+        "PURR": 0.5,
+        "HYPE": 0.5
+      },
+      "annualized": 0.180776,
+      "max_drawdown": 0.007396,
+      "sharpe": 4.9544,
+      "funding_usd": 391.8092,
+      "basis_usd": -22.4066,
+      "total_notional": 829.55,
+      "entry_cost": 3.4426,
+      "min_notional": 375.0
+    },
+    "B0_majors_only": {
+      "weights": {
+        "BTC": 0.5,
+        "ETH": 0.5
+      },
+      "annualized": 0.076197,
+      "max_drawdown": 0.001412,
+      "sharpe": 10.4619,
+      "funding_usd": 151.8917,
+      "basis_usd": -0.1104,
+      "total_notional": 968.57,
+      "entry_cost": 4.0196,
+      "min_notional": 480.77
+    },
+    "C_50_50": {
+      "weights": {
+        "PURR": 0.25,
+        "HYPE": 0.25,
+        "BTC": 0.25,
+        "ETH": 0.25
+      },
+      "annualized": 0.129548,
+      "max_drawdown": 0.003691,
+      "sharpe": 6.5205,
+      "funding_usd": 271.8505,
+      "basis_usd": -11.2585,
+      "total_notional": 899.06,
+      "entry_cost": 3.7311,
+      "min_notional": 187.5
+    },
+    "D_25_75_majors": {
+      "weights": {
+        "PURR": 0.125,
+        "HYPE": 0.125,
+        "BTC": 0.375,
+        "ETH": 0.375
+      },
+      "annualized": 0.103156,
+      "max_drawdown": 0.00207,
+      "sharpe": 8.6852,
+      "funding_usd": 211.8711,
+      "basis_usd": -5.6845,
+      "total_notional": 933.82,
+      "entry_cost": 3.8753,
+      "min_notional": 93.75
+    },
+    "E_75_25_small": {
+      "weights": {
+        "PURR": 0.375,
+        "HYPE": 0.375,
+        "BTC": 0.125,
+        "ETH": 0.125
+      },
+      "annualized": 0.155411,
+      "max_drawdown": 0.005504,
+      "sharpe": 5.5068,
+      "funding_usd": 331.8298,
+      "basis_usd": -16.8326,
+      "total_notional": 864.3,
+      "entry_cost": 3.5869,
+      "min_notional": 120.19
+    }
+  }
+}

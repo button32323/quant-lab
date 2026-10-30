@@ -40,7 +40,9 @@ data/              本地数据目录（git 忽略，不入库）
 
 - [docs/DESIGN.md](docs/DESIGN.md) — 研究流程与原则
 - [docs/ARBITRAGE_RESEARCH.md](docs/ARBITRAGE_RESEARCH.md) — 套利类型、成功案例与可行路线
-- [docs/BTC_MOM90.md](reports/BTC_MOM90_REPORT.md) — BTC 90 日 TSMOM 回测（未通过筛选）
+- [reports/PLAN_100_1000.md](reports/PLAN_100_1000.md) — **$100–$1,000 本金方案对比与推荐**
+- [reports/CARRY_COMBINED.md](reports/CARRY_COMBINED.md) — 小市值+主流 carry 组合回测
+- [reports/BTC_MOM90_REPORT.md](reports/BTC_MOM90_REPORT.md) — BTC 90 日动量回测（淘汰）
 
 ## 红线（写死）
 
@@ -53,4 +55,5 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 

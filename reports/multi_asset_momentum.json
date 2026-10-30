@@ -1,0 +1,173 @@
+{
+  "symbols": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "BNB"
+  ],
+  "window": "2020-08-11 → 2026-10-27",
+  "bars": 2269,
+  "costs": {
+    "fee": 0.001,
+    "slippage": 0.0005
+  },
+  "strategies": {
+    "M1_top1_90d_daily": {
+      "full": {
+        "days": 2268,
+        "total_return": 42.732338,
+        "cagr": 0.836801,
+        "volatility": 0.814859,
+        "sharpe": 1.137,
+        "max_drawdown": 0.823162,
+        "final_equity": 4373.2338
+      },
+      "oos": {
+        "days": 1030,
+        "total_return": -0.122196,
+        "cagr": -0.045135,
+        "volatility": 0.5069,
+        "sharpe": 0.1604,
+        "max_drawdown": 0.521811,
+        "final_equity": 87.7804
+      },
+      "costs_usd": 1691.3275,
+      "turnover_usd": 1127551.64,
+      "avg_exposure": 0.672
+    },
+    "M2_top1_90d_monthly": {
+      "full": {
+        "days": 2268,
+        "total_return": 16.306797,
+        "cagr": 0.582239,
+        "volatility": 0.7312,
+        "sharpe": 0.9895,
+        "max_drawdown": 0.798326,
+        "final_equity": 1730.6797
+      },
+      "oos": {
+        "days": 1030,
+        "total_return": 0.609189,
+        "cagr": 0.183628,
+        "volatility": 0.515901,
+        "sharpe": 0.5828,
+        "max_drawdown": 0.517287,
+        "final_equity": 160.9189
+      },
+      "costs_usd": 79.3111,
+      "turnover_usd": 52874.09,
+      "avg_exposure": 0.669
+    },
+    "M3_top1_60d_daily": {
+      "full": {
+        "days": 2268,
+        "total_return": 43.091903,
+        "cagr": 0.839223,
+        "volatility": 0.798326,
+        "sharpe": 1.1593,
+        "max_drawdown": 0.717769,
+        "final_equity": 4409.1903
+      },
+      "oos": {
+        "days": 1030,
+        "total_return": -0.12315,
+        "cagr": -0.045503,
+        "volatility": 0.548773,
+        "sharpe": 0.1863,
+        "max_drawdown": 0.633208,
+        "final_equity": 87.685
+      },
+      "costs_usd": 1757.9622,
+      "turnover_usd": 1171974.81,
+      "avg_exposure": 0.699
+    },
+    "M4_eth_btc_rel_60d": {
+      "full": {
+        "days": 2268,
+        "total_return": 4.499326,
+        "cagr": 0.315653,
+        "volatility": 0.661653,
+        "sharpe": 0.7468,
+        "max_drawdown": 0.827918,
+        "final_equity": 549.9326
+      },
+      "oos": {
+        "days": 1030,
+        "total_return": 0.59052,
+        "cagr": 0.178743,
+        "volatility": 0.541453,
+        "sharpe": 0.5721,
+        "max_drawdown": 0.672541,
+        "final_equity": 159.052
+      },
+      "costs_usd": 150.809,
+      "turnover_usd": 100539.32,
+      "avg_exposure": 0.973
+    },
+    "M5_equal_positive_90d_monthly": {
+      "full": {
+        "days": 2268,
+        "total_return": 8.892093,
+        "cagr": 0.446027,
+        "volatility": 0.591172,
+        "sharpe": 0.9203,
+        "max_drawdown": 0.785318,
+        "final_equity": 989.2093
+      },
+      "oos": {
+        "days": 1030,
+        "total_return": 0.218801,
+        "cagr": 0.072635,
+        "volatility": 0.440835,
+        "sharpe": 0.3793,
+        "max_drawdown": 0.487115,
+        "final_equity": 121.8801
+      },
+      "costs_usd": 63.4629,
+      "turnover_usd": 42308.57,
+      "avg_exposure": 0.669
+    }
+  },
+  "benchmarks": {
+    "BTC_buy_hold": {
+      "full": {
+        "days": 2268,
+        "total_return": 6.091639,
+        "cagr": 0.370612,
+        "volatility": 0.568466,
+        "sharpe": 0.8385,
+        "max_drawdown": 0.766293,
+        "final_equity": 709.1639
+      },
+      "oos": {
+        "days": 1030,
+        "total_return": 0.831385,
+        "cagr": 0.239142,
+        "volatility": 0.467882,
+        "sharpe": 0.6911,
+        "max_drawdown": 0.529718,
+        "final_equity": 183.1385
+      }
+    },
+    "equal_weight_buy_hold": {
+      "full": {
+        "days": 2268,
+        "total_return": 19.273746,
+        "cagr": 0.623047,
+        "volatility": 0.776126,
+        "sharpe": 1.014,
+        "max_drawdown": 0.862479,
+        "final_equity": 2027.3746
+      },
+      "oos": {
+        "days": 1030,
+        "total_return": 0.308325,
+        "cagr": 0.099918,
+        "volatility": 0.616215,
+        "sharpe": 0.4626,
+        "max_drawdown": 0.648002,
+        "final_equity": 130.8325
+      }
+    }
+  }
+}

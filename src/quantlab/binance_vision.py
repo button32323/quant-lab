@@ -20,12 +20,19 @@ for _k in ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy"
 
 
 def _get(url: str, retries: int = 4, timeout: float = 20.0) -> bytes:
+    import urllib.error
     last: Exception | None = None
     for i in range(retries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "quantlab/0.1"})
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return resp.read()
+        except urllib.error.HTTPError as exc:
+            # 404/403：文件不存在，直接失败，不重试
+            if exc.code in (403, 404):
+                raise RuntimeError(f"文件不存在 {url}") from exc
+            last = exc
+            time.sleep(1.5 * (i + 1))
         except Exception as exc:  # noqa: BLE001
             last = exc
             time.sleep(1.5 * (i + 1))
@@ -133,5 +140,6 @@ def fetch_daily_bars(
         d += timedelta(days=1)
 
     return [bars[k] for k in sorted(bars)]
+
 
 
