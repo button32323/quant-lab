@@ -1,0 +1,48 @@
+{
+  "strategy": "A0 PURR+HYPE carry",
+  "capital": 1000.0,
+  "window": "2024-12-07 → 2026-10-23",
+  "current_env_annualized": 0.0966,
+  "entry_cost_usd": 3.4426,
+  "entry_cost_pct": 0.3443,
+  "recent180_funding_positive_share": 0.9667,
+  "bootstrap_recent180": {
+    "horizon_days": 30,
+    "samples": 5000,
+    "return_p5": -0.3084,
+    "return_p50": 0.4696,
+    "return_p95": 1.2845,
+    "annualized_p5": -3.6877,
+    "annualized_p50": 5.8654,
+    "annualized_p95": 16.7996,
+    "mdd_p50": 0.5084,
+    "mdd_p95": 0.909,
+    "prob_return_positive": 0.8462,
+    "prob_annualized_gt_10pct": 0.2504,
+    "prob_mdd_lt_5pct": 1.0,
+    "prob_funding_share_gt_60pct": 1.0,
+    "prob_all_gates": 0.2504
+  },
+  "bootstrap_full": {
+    "horizon_days": 30,
+    "samples": 5000,
+    "return_p5": -0.0747,
+    "return_p50": 0.8485,
+    "return_p95": 2.7033,
+    "annualized_p5": -0.9048,
+    "annualized_p50": 10.8265,
+    "annualized_p95": 38.3386,
+    "mdd_p50": 0.4654,
+    "mdd_p95": 0.8405,
+    "prob_return_positive": 0.9338,
+    "prob_annualized_gt_10pct": 0.5368,
+    "prob_mdd_lt_5pct": 1.0,
+    "prob_funding_share_gt_60pct": 1.0,
+    "prob_all_gates": 0.5368
+  },
+  "current_env_expectation": {
+    "gross_30d_pct": 0.794,
+    "net_after_entry_cost_30d_pct": 0.4497,
+    "annualized_after_entry_cost_pct": 5.611
+  }
+}
