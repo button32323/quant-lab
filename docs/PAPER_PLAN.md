@@ -65,11 +65,13 @@
 - 停止方式：创建 `paper/STOP` 文件（runner 会在下一轮退出），或结束对应 powershell 进程；
 - 重启电脑后手动启动：`powershell -NoProfile -ExecutionPolicy Bypass -File "C:\量化项目\scripts\paper\paper_runner.ps1"`（隐藏窗口可自行加 `-WindowStyle Hidden`）；
 - 数据文件：`paper/state.json`、`paper/hourly.csv`、`paper/REPORT.md`、`paper/reconcile.json`。
+- 验证工具：scripts/paper/predict_settlement.py（预登记）、scripts/paper/verify_settlement.py（结算核对）、scripts/paper/journal.py（日汇总）。
 
 ## 6. 状态与限制
 
 - 本计划只用公开数据、虚拟资金，不接触账户/密钥；
 - 当前资金费环境偏弱，paper 目标首先是验证"执行/对账"正确性，其次才是收益；
 - 30 天期间不修改参数、不挑数据、不缩短周期。
+
 
 

@@ -13,6 +13,16 @@
 | 心跳 | `paper/heartbeat.txt` | 最近一次运行时间 |
 | 日志 | `paper/runner.log` | 运行/门禁/对账记录 |
 
+### 2.1 资金费验证工具
+
+| 工具 | 用途 |
+|---|---|
+| `scripts/paper/predict_settlement.py` | 结算前预登记下一小时预期入账（写 `paper/expected_settlement.json`） |
+| `scripts/paper/verify_settlement.py` | 结算后对比预期 vs 实际（PASS/FAIL/PENDING） |
+| `scripts/paper/journal.py` | 生成按日汇总的 `paper/JOURNAL.md` |
+
+建议顺序：整点前运行 predict → 整点后 runner 捕获 → 运行 verify。
+
 ## 2. Paper 操作
 
 ```powershell
@@ -90,4 +100,5 @@ python scripts/research/multi_asset_momentum.py   # 多资产动量（淘汰）
 - 本仓库不保存任何私钥/助记词/API 密钥；
 - 不做未经 paper 验证的策略实盘；
 - 不承诺收益：历史回测 ≠ 未来表现。
+
 
