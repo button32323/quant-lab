@@ -218,6 +218,54 @@ def reconcile() -> dict:
     return out
 
 
+GATE = {"days": 30, "return_gt": 0.0, "cagr_gt": 0.10, "mdd_lt": 0.05,
+        "funding_positive_share_gt": 0.60, "reconcile_pass": True}
+
+
+def evaluate_gate(state: dict, now: datetime | None = None) -> dict:
+    """30 天验证门禁评估（基于 hourly.csv 与 reconcile.json）。"""
+    now = now or datetime.now(timezone.utc)
+    created = datetime.fromisoformat(state["created_at"])
+    days = (now - created).total_seconds() / 86400.0
+    navs = []
+    if HOURLY.exists():
+        with HOURLY.open(encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                try:
+                    navs.append(float(r["nav_usd"]))
+                except (TypeError, ValueError):
+                    continue
+    nav = navs[-1] if navs else state["capital_usd"] - state["entry_cost_usd"]
+    ret = nav / state["capital_usd"] - 1.0
+    cagr = (nav / state["capital_usd"]) ** (365.0 / days) - 1.0 if days >= 1 and nav > 0 else None
+    mdd = max_drawdown(navs) if navs else 0.0
+    total_sett = sum(s["settlements"] for s in state.get("funding_stats", {}).values())
+    total_pos = sum(s["positive"] for s in state.get("funding_stats", {}).values())
+    pos_share = (total_pos / total_sett) if total_sett else 0.0
+    rec_pass = False
+    if RECONCILE.exists():
+        try:
+            rec_pass = json.loads(RECONCILE.read_text(encoding="utf-8")).get("overall") == "PASS"
+        except Exception:  # noqa: BLE001
+            rec_pass = False
+    checks = {
+        "elapsed_30d": days >= GATE["days"],
+        "return_positive": ret > GATE["return_gt"],
+        "cagr_gt_10pct": (cagr is not None and cagr > GATE["cagr_gt"]),
+        "mdd_lt_5pct": mdd < GATE["mdd_lt"],
+        "funding_positive_share_gt_60pct": pos_share > GATE["funding_positive_share_gt"],
+        "funding_reconcile_pass": rec_pass,
+    }
+    status = "PENDING" if days < GATE["days"] else ("PASS" if all(checks.values()) else "FAIL")
+    return {"status": status, "days_elapsed": round(days, 4), "nav_usd": round(nav, 4),
+            "return_pct": round(ret * 100, 4),
+            "annualized_pct": round(cagr * 100, 4) if cagr is not None else None,
+            "max_drawdown_pct": round(mdd * 100, 4),
+            "funding_settlements": total_sett,
+            "funding_positive_share": round(pos_share, 4),
+            "checks": checks}
+
+
 def write_report(state: dict) -> None:
     navs = []
     if HOURLY.exists():
@@ -269,6 +317,8 @@ def main(argv: list[str]) -> int:
         print(json.dumps(run_once(), ensure_ascii=False))
     elif cmd == "reconcile":
         print(json.dumps(reconcile(), ensure_ascii=False, indent=2))
+    elif cmd == "gate":
+        print(json.dumps(evaluate_gate(load_state()), ensure_ascii=False, indent=2))
     elif cmd == "status":
         st = load_state()
         print(json.dumps({k: st[k] for k in ("created_at", "capital_usd", "entry_cost_usd",
@@ -282,4 +332,6 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv))
+
+
 

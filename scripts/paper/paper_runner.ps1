@@ -1,4 +1,4 @@
-﻿# paper 运行器：每小时更新一次虚拟 carry 账户（只读公开数据）
+﻿# paper 运行器：整点对齐运行，每小时更新虚拟 carry 账户（只读公开数据）
 $ErrorActionPreference = 'Continue'
 $proj = 'C:\量化项目'
 $py = 'C:\Users\Administrator\AppData\Local\Programs\Python\Python313\python.exe'
@@ -26,10 +26,19 @@ while ($true) {
     $trim = (($out -join ' ') -replace '\s+', ' ').Trim()
     if ($trim.Length -gt 300) { $trim = $trim.Substring(0, 300) }
     L "run exit=$code :: $trim"
+    $g = & $py $script gate 2>&1
+    $gline = (($g -join ' ') -replace '\s+', ' ').Trim()
+    if ($gline.Length -gt 300) { $gline = $gline.Substring(0, 300) }
+    L "gate :: $gline"
     $i++
     if ($i % 24 -eq 0) {
         $out2 = & $py $script reconcile 2>&1
         L "reconcile exit=$LASTEXITCODE :: $((($out2 -join ' ') -replace '\s+',' ').Trim())"
     }
-    Start-Sleep -Seconds 3600
+    # 对齐到下一个整点后 75 秒（确保该整点资金费已可查）
+    $now = Get-Date
+    $next = $now.Date.AddHours($now.Hour + 1).AddSeconds(75)
+    $sleep = [int]($next - $now).TotalSeconds
+    if ($sleep -lt 60) { $sleep = 60 }
+    Start-Sleep -Seconds $sleep
 }

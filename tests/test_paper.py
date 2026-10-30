@@ -1,4 +1,4 @@
-"""paper 引擎纯函数测试（离线，无网络）。"""
+﻿"""paper 引擎纯函数测试（离线，无网络）。"""
 import unittest
 
 from quantlab import paper
@@ -41,3 +41,62 @@ class TestPaperCalc(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class TestGate(unittest.TestCase):
+    def _state(self, days: float) -> dict:
+        from datetime import datetime, timedelta, timezone
+        created = datetime.now(timezone.utc) - timedelta(days=days)
+        return {"created_at": created.isoformat(timespec="seconds"), "capital_usd": 1000.0,
+                "entry_cost_usd": 3.44, "funding_stats": {"PURR": {"settlements": 100, "positive": 70}}}
+
+    def _hourly(self, tmp_path, navs):
+        import csv
+        p = tmp_path / "hourly.csv"
+        with p.open("w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(paper.HOURLY_COLS)
+            for i, nav in enumerate(navs):
+                w.writerow([f"2026-01-{i+1:02d}T00:00:00+00:00", nav, 5.0, 0.0, 3.44, 0.7, 0, 0, 0, 0])
+        return p
+
+    def test_pending_before_30d(self):
+        import tempfile
+        from pathlib import Path
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            hourly = self._hourly(tmp, [1000, 1010, 1005, 1020])
+            rec = tmp / "reconcile.json"
+            rec.write_text('{"overall": "PASS"}', encoding="utf-8")
+            with mock.patch.object(paper, "HOURLY", hourly), mock.patch.object(paper, "RECONCILE", rec):
+                g = paper.evaluate_gate(self._state(days=5))
+        self.assertEqual(g["status"], "PENDING")
+        self.assertFalse(g["checks"]["elapsed_30d"])
+
+    def test_pass_after_30d(self):
+        import tempfile
+        from pathlib import Path
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            hourly = self._hourly(tmp, [1000, 1020, 1015, 1030])
+            rec = tmp / "reconcile.json"
+            rec.write_text('{"overall": "PASS"}', encoding="utf-8")
+            with mock.patch.object(paper, "HOURLY", hourly), mock.patch.object(paper, "RECONCILE", rec):
+                g = paper.evaluate_gate(self._state(days=31))
+        self.assertEqual(g["status"], "PASS")
+        self.assertTrue(all(g["checks"].values()), g)
+
+    def test_fail_negative_return(self):
+        import tempfile
+        from pathlib import Path
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            hourly = self._hourly(tmp, [1000, 990, 970, 960])
+            rec = tmp / "reconcile.json"
+            rec.write_text('{"overall": "PASS"}', encoding="utf-8")
+            with mock.patch.object(paper, "HOURLY", hourly), mock.patch.object(paper, "RECONCILE", rec):
+                g = paper.evaluate_gate(self._state(days=31))
+        self.assertEqual(g["status"], "FAIL")
+        self.assertFalse(g["checks"]["return_positive"])
