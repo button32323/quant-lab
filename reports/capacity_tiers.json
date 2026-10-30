@@ -1,0 +1,222 @@
+{
+  "vol_frac": 0.01,
+  "min_order_usd": 10.0,
+  "assets": {
+    "PURR": {
+      "asset": "PURR",
+      "window_days": 30,
+      "spot_vol_usd": 2109944.0,
+      "perp_vol_usd": 2187983.0,
+      "capacity_notional_usd": 21099.0,
+      "capacity_utilization_pct": 1.0
+    },
+    "HYPE": {
+      "asset": "HYPE",
+      "window_days": 30,
+      "spot_vol_usd": 58149590.0,
+      "perp_vol_usd": 421003767.0,
+      "capacity_notional_usd": 581496.0,
+      "capacity_utilization_pct": 1.0
+    }
+  },
+  "allocations": {
+    "A0_small": {
+      "weights": {
+        "PURR": 0.5,
+        "HYPE": 0.5
+      },
+      "max_capital_usd": 56264.0,
+      "rows": [
+        {
+          "capital": 27,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.00047988056305986064,
+          "PURR_notional": 10.12,
+          "PURR_util": 0.0005,
+          "HYPE_notional": 12.27,
+          "HYPE_util": 0.0
+        },
+        {
+          "capital": 50,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.0008886677093701123,
+          "PURR_notional": 18.75,
+          "PURR_util": 0.0009,
+          "HYPE_notional": 22.73,
+          "HYPE_util": 0.0
+        },
+        {
+          "capital": 100,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.0017773354187402247,
+          "PURR_notional": 37.5,
+          "PURR_util": 0.0018,
+          "HYPE_notional": 45.45,
+          "HYPE_util": 0.0001
+        },
+        {
+          "capital": 300,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.005332006256220674,
+          "PURR_notional": 112.5,
+          "PURR_util": 0.0053,
+          "HYPE_notional": 136.36,
+          "HYPE_util": 0.0002
+        },
+        {
+          "capital": 500,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.008886677093701124,
+          "PURR_notional": 187.5,
+          "PURR_util": 0.0089,
+          "HYPE_notional": 227.27,
+          "HYPE_util": 0.0004
+        },
+        {
+          "capital": 1000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.017773354187402248,
+          "PURR_notional": 375.0,
+          "PURR_util": 0.0178,
+          "HYPE_notional": 454.55,
+          "HYPE_util": 0.0008
+        },
+        {
+          "capital": 3000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.05332006256220674,
+          "PURR_notional": 1125.0,
+          "PURR_util": 0.0533,
+          "HYPE_notional": 1363.64,
+          "HYPE_util": 0.0023
+        },
+        {
+          "capital": 12000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.21328025024882696,
+          "PURR_notional": 4500.0,
+          "PURR_util": 0.2133,
+          "HYPE_notional": 5454.55,
+          "HYPE_util": 0.0094
+        },
+        {
+          "capital": 20000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.3554670837480449,
+          "PURR_notional": 7500.0,
+          "PURR_util": 0.3555,
+          "HYPE_notional": 9090.91,
+          "HYPE_util": 0.0156
+        }
+      ]
+    },
+    "E_75_25": {
+      "weights": {
+        "PURR": 0.375,
+        "HYPE": 0.375
+      },
+      "max_capital_usd": 75019.0,
+      "rows": [
+        {
+          "capital": 27,
+          "feasible": false,
+          "min_notional_ok": false,
+          "max_util": 0.0003599104222948955,
+          "PURR_notional": 7.59,
+          "PURR_util": 0.0004,
+          "HYPE_notional": 9.2,
+          "HYPE_util": 0.0
+        },
+        {
+          "capital": 50,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.0006665007820275843,
+          "PURR_notional": 14.06,
+          "PURR_util": 0.0007,
+          "HYPE_notional": 17.05,
+          "HYPE_util": 0.0
+        },
+        {
+          "capital": 100,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.0013330015640551686,
+          "PURR_notional": 28.12,
+          "PURR_util": 0.0013,
+          "HYPE_notional": 34.09,
+          "HYPE_util": 0.0001
+        },
+        {
+          "capital": 300,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.003999004692165505,
+          "PURR_notional": 84.38,
+          "PURR_util": 0.004,
+          "HYPE_notional": 102.27,
+          "HYPE_util": 0.0002
+        },
+        {
+          "capital": 500,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.006665007820275843,
+          "PURR_notional": 140.62,
+          "PURR_util": 0.0067,
+          "HYPE_notional": 170.45,
+          "HYPE_util": 0.0003
+        },
+        {
+          "capital": 1000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.013330015640551685,
+          "PURR_notional": 281.25,
+          "PURR_util": 0.0133,
+          "HYPE_notional": 340.91,
+          "HYPE_util": 0.0006
+        },
+        {
+          "capital": 3000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.03999004692165505,
+          "PURR_notional": 843.75,
+          "PURR_util": 0.04,
+          "HYPE_notional": 1022.73,
+          "HYPE_util": 0.0018
+        },
+        {
+          "capital": 12000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.1599601876866202,
+          "PURR_notional": 3375.0,
+          "PURR_util": 0.16,
+          "HYPE_notional": 4090.91,
+          "HYPE_util": 0.007
+        },
+        {
+          "capital": 20000,
+          "feasible": true,
+          "min_notional_ok": true,
+          "max_util": 0.2666003128110337,
+          "PURR_notional": 5625.0,
+          "PURR_util": 0.2666,
+          "HYPE_notional": 6818.18,
+          "HYPE_util": 0.0117
+        }
+      ]
+    }
+  }
+}
