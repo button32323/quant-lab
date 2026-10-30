@@ -1,0 +1,26 @@
+{
+  "expected_file": "C:\\量化项目\\paper\\expected_settlement.json",
+  "recorded_at": "2026-10-30T16:54:45+00:00",
+  "settlement_hour_utc": "2026-10-30T17:00:00+00:00",
+  "assets": {
+    "PURR": {
+      "expected_usd": 0.004687,
+      "actual_usd": 0,
+      "diff_usd": -0.004687,
+      "settlements_found": 0,
+      "rows": []
+    },
+    "HYPE": {
+      "expected_usd": 0.009256,
+      "actual_usd": 0,
+      "diff_usd": -0.009256,
+      "settlements_found": 0,
+      "rows": []
+    }
+  },
+  "expected_total_usd": 0.013943,
+  "actual_total_usd": 0.0,
+  "diff_total_usd": -0.013943,
+  "tolerance_usd": 0.002,
+  "verdict": "PENDING"
+}
