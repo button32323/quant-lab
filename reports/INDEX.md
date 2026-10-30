@@ -11,6 +11,10 @@
 5. **paper 30 天大概率不过 10% 年化门禁**（一次建仓成本 −0.34% 被 30 天窗口年化放大），paper 主要用于验证执行/对账；
 6. 淘汰方案：BTC 90 日动量（MDD 66.7%、样本外 Sharpe 0.31）、多资产动量（样本外 Sharpe ≤0.69、MDD 48–67%）、多资产小市值分散（4 资产近 254 天 −4.97%）。
 
+## 快速问答
+
+常见问题（收益为什么只有 9.7%、资金费转负怎么办、最低多少钱、安全吗……）见 [FAQ.md](FAQ.md)。
+
 ## 报告清单
 
 | 报告 | 内容 | 关键结论 |
@@ -45,4 +49,5 @@
 - 启动：2026-10-30T16:40:40Z（虚拟 $1,000，PURR+HYPE carry）；
 - 实时报告：[../paper/REPORT.md](../paper/REPORT.md)、最终报告 [../paper/FINAL_REPORT.md](../paper/FINAL_REPORT.md)、告警 [../paper/ALERTS.md](../paper/ALERTS.md)；
 - 30 天到期后看 gate：`python src/quantlab/paper.py gate`。
+
 

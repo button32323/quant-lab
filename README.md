@@ -40,6 +40,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - [reports/INDEX.md](reports/INDEX.md) — **报告索引与核心结论（先看这个）**
 - [reports/COMPLETION_EVIDENCE.md](reports/COMPLETION_EVIDENCE.md) — 目标完成证据
+- [reports/FAQ.md](reports/FAQ.md) — 常见问题（收益/风险/最低本金）
 
 - [docs/DESIGN.md](docs/DESIGN.md) — 研究流程与原则
 - [docs/ARBITRAGE_RESEARCH.md](docs/ARBITRAGE_RESEARCH.md) — 套利类型、成功案例与可行路线
@@ -67,6 +68,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 
 
 
