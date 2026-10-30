@@ -1,4 +1,4 @@
-"""Hyperliquid 公开 API 封装（无需 API key）。
+﻿"""Hyperliquid 公开 API 封装（无需 API key）。
 
 只读公开数据：资金费历史、K 线、市场上下文（mark price / OI / 成交量）。
 """
@@ -21,8 +21,9 @@ class HyperliquidError(RuntimeError):
     pass
 
 
-def post(body: dict, timeout: float = 15.0, retries: int = 3) -> object:
-    """POST /info，带简单重试。"""
+def post(body: dict, timeout: float = 15.0, retries: int = 6) -> object:
+    """POST /info，带重试；429 时指数退避。"""
+    import urllib.error
     last: Exception | None = None
     for i in range(retries):
         try:
@@ -33,9 +34,13 @@ def post(body: dict, timeout: float = 15.0, retries: int = 3) -> object:
             )
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return json.loads(resp.read())
+        except urllib.error.HTTPError as exc:
+            last = exc
+            wait = 8.0 * (i + 1) if exc.code == 429 else 1.5 * (i + 1)
+            time.sleep(wait)
         except Exception as exc:  # noqa: BLE001
             last = exc
-            time.sleep(1.0 * (i + 1))
+            time.sleep(1.5 * (i + 1))
     raise HyperliquidError(f"API 请求失败: {last}")
 
 
@@ -48,6 +53,7 @@ def funding_history(coin: str, start_ms: int = 0) -> list[dict]:
         if not batch:
             break
         rows.extend(batch)
+        time.sleep(0.12)  # 分页节流，避免 429
         last = int(batch[-1]["time"])
         if last <= start:
             break
@@ -75,3 +81,4 @@ def ctxs() -> dict:
 
 def to_utc(ms: int) -> datetime:
     return datetime.fromtimestamp(int(ms) / 1000, tz=timezone.utc)
+
