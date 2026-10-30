@@ -257,7 +257,9 @@ def evaluate_gate(state: dict, now: datetime | None = None) -> dict:
         "funding_reconcile_pass": rec_pass,
     }
     status = "PENDING" if days < GATE["days"] else ("PASS" if all(checks.values()) else "FAIL")
+    funding_only_ann = (state.get("funding_accrued_usd", 0.0) / state["capital_usd"]) * (365.0 / days) if days > 0 else 0.0
     return {"status": status, "days_elapsed": round(days, 4), "nav_usd": round(nav, 4),
+            "funding_only_annualized_pct": round(funding_only_ann * 100, 4),
             "return_pct": round(ret * 100, 4),
             "annualized_pct": round(cagr * 100, 4) if cagr is not None else None,
             "max_drawdown_pct": round(mdd * 100, 4),
@@ -332,6 +334,8 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv))
+
+
 
 
 

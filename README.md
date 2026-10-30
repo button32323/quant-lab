@@ -48,6 +48,7 @@ data/              本地数据目录（git 忽略，不入库）
 - [reports/ORDER_ROUNDING.md](reports/ORDER_ROUNDING.md) — 下单取整/最小下单检查
 - [reports/CARRY_MULTIASSET.md](reports/CARRY_MULTIASSET.md) — 小市值多资产分散检验
 - [reports/PAPER_PROBABILITY.md](reports/PAPER_PROBABILITY.md) — paper 30 天通过概率
+- [reports/ALLOCATION_SENSITIVITY.md](reports/ALLOCATION_SENSITIVITY.md) — A0 配比敏感性
 - [docs/PAPER_PLAN.md](docs/PAPER_PLAN.md) — 30 天 paper 验证计划
 
 ## 红线（写死）
@@ -61,6 +62,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 
 
 

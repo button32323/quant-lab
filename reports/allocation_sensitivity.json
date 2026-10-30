@@ -1,0 +1,51 @@
+{
+  "window": "2024-12-07 → 2026-10-23",
+  "capital": 1000.0,
+  "results": {
+    "50/50（默认）": {
+      "cagr": 0.180776,
+      "mdd": 0.007396,
+      "sharpe": 4.9544,
+      "vol": 0.034419,
+      "funding_usd": 391.81,
+      "basis_usd": -22.41,
+      "min_notional": 375.0
+    },
+    "75/25 PURR偏重": {
+      "cagr": 0.18729,
+      "mdd": 0.011661,
+      "sharpe": 3.6588,
+      "vol": 0.048181,
+      "funding_usd": 417.37,
+      "basis_usd": -33.96,
+      "min_notional": 227.27
+    },
+    "25/75 HYPE偏重": {
+      "cagr": 0.174231,
+      "mdd": 0.003966,
+      "sharpe": 7.018,
+      "vol": 0.023506,
+      "funding_usd": 366.25,
+      "basis_usd": -10.86,
+      "min_notional": 187.5
+    },
+    "100% PURR": {
+      "cagr": 0.193773,
+      "mdd": 0.015955,
+      "sharpe": 2.8944,
+      "vol": 0.062961,
+      "funding_usd": 442.93,
+      "basis_usd": -45.51,
+      "min_notional": 750.0
+    },
+    "100% HYPE": {
+      "cagr": 0.167653,
+      "mdd": 0.00514,
+      "sharpe": 7.7523,
+      "vol": 0.020587,
+      "funding_usd": 340.69,
+      "basis_usd": 0.69,
+      "min_notional": 909.09
+    }
+  }
+}
