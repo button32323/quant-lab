@@ -1,0 +1,184 @@
+{
+  "min_order_usd": 10.0,
+  "entry_cost_rate": 0.00415,
+  "specs": {
+    "PURR": {
+      "spot_sz_decimals": 0,
+      "perp_sz_decimals": 0,
+      "max_lev": 3.0
+    },
+    "HYPE": {
+      "spot_sz_decimals": 2,
+      "perp_sz_decimals": 2,
+      "max_lev": 10.0
+    }
+  },
+  "prices": {
+    "PURR": {
+      "spot": 0.12239,
+      "perp": 0.12292
+    },
+    "HYPE": {
+      "spot": 92.181,
+      "perp": 92.225
+    }
+  },
+  "rows": [
+    {
+      "capital": 27,
+      "assets": {
+        "PURR": {
+          "target_notional": 10.125,
+          "qty_spot_raw": 82.7273470054743,
+          "qty_spot_rounded": 82.0,
+          "qty_perp_raw": 82.37064757565896,
+          "qty_perp_rounded": 82.0,
+          "actual_notional": 10.036,
+          "notional_error_pct": -0.8792,
+          "above_min_order": true
+        },
+        "HYPE": {
+          "target_notional": 12.2727,
+          "qty_spot_raw": 0.13313727636635828,
+          "qty_spot_rounded": 0.13,
+          "qty_perp_raw": 0.1330737573621824,
+          "qty_perp_rounded": 0.13,
+          "actual_notional": 11.9835,
+          "notional_error_pct": -2.3564,
+          "above_min_order": true
+        }
+      },
+      "total_funding_error_pct": 1.6178
+    },
+    {
+      "capital": 50,
+      "assets": {
+        "PURR": {
+          "target_notional": 18.75,
+          "qty_spot_raw": 153.19879075087835,
+          "qty_spot_rounded": 153.0,
+          "qty_perp_raw": 152.5382362512203,
+          "qty_perp_rounded": 152.0,
+          "actual_notional": 18.6838,
+          "notional_error_pct": -0.3529,
+          "above_min_order": true
+        },
+        "HYPE": {
+          "target_notional": 22.7273,
+          "qty_spot_raw": 0.24655051178955237,
+          "qty_spot_rounded": 0.24,
+          "qty_perp_raw": 0.2464328840040415,
+          "qty_perp_rounded": 0.24,
+          "actual_notional": 22.1234,
+          "notional_error_pct": -2.6569,
+          "above_min_order": true
+        }
+      },
+      "total_funding_error_pct": 1.5049
+    },
+    {
+      "capital": 100,
+      "assets": {
+        "PURR": {
+          "target_notional": 37.5,
+          "qty_spot_raw": 306.3975815017567,
+          "qty_spot_rounded": 306.0,
+          "qty_perp_raw": 305.0764725024406,
+          "qty_perp_rounded": 305.0,
+          "actual_notional": 37.4513,
+          "notional_error_pct": -0.1298,
+          "above_min_order": true
+        },
+        "HYPE": {
+          "target_notional": 45.4545,
+          "qty_spot_raw": 0.49310102357910474,
+          "qty_spot_rounded": 0.49,
+          "qty_perp_raw": 0.492865768008083,
+          "qty_perp_rounded": 0.49,
+          "actual_notional": 45.1687,
+          "notional_error_pct": -0.6289,
+          "above_min_order": true
+        }
+      },
+      "total_funding_error_pct": 0.37935
+    },
+    {
+      "capital": 300,
+      "assets": {
+        "PURR": {
+          "target_notional": 112.5,
+          "qty_spot_raw": 919.1927445052701,
+          "qty_spot_rounded": 919.0,
+          "qty_perp_raw": 915.2294175073218,
+          "qty_perp_rounded": 915.0,
+          "actual_notional": 112.4718,
+          "notional_error_pct": -0.0251,
+          "above_min_order": true
+        },
+        "HYPE": {
+          "target_notional": 136.3636,
+          "qty_spot_raw": 1.479303070737314,
+          "qty_spot_rounded": 1.47,
+          "qty_perp_raw": 1.4785973040242488,
+          "qty_perp_rounded": 1.47,
+          "actual_notional": 135.5061,
+          "notional_error_pct": -0.6289,
+          "above_min_order": true
+        }
+      },
+      "total_funding_error_pct": 0.327
+    },
+    {
+      "capital": 500,
+      "assets": {
+        "PURR": {
+          "target_notional": 187.5,
+          "qty_spot_raw": 1531.9879075087833,
+          "qty_spot_rounded": 1531.0,
+          "qty_perp_raw": 1525.3823625122031,
+          "qty_perp_rounded": 1525.0,
+          "actual_notional": 187.3791,
+          "notional_error_pct": -0.0645,
+          "above_min_order": true
+        },
+        "HYPE": {
+          "target_notional": 227.2727,
+          "qty_spot_raw": 2.4655051178955234,
+          "qty_spot_rounded": 2.46,
+          "qty_perp_raw": 2.464328840040415,
+          "qty_perp_rounded": 2.46,
+          "actual_notional": 226.7653,
+          "notional_error_pct": -0.2233,
+          "above_min_order": true
+        }
+      },
+      "total_funding_error_pct": 0.1439
+    },
+    {
+      "capital": 1000,
+      "assets": {
+        "PURR": {
+          "target_notional": 375.0,
+          "qty_spot_raw": 3063.9758150175667,
+          "qty_spot_rounded": 3063.0,
+          "qty_perp_raw": 3050.7647250244063,
+          "qty_perp_rounded": 3050.0,
+          "actual_notional": 374.8806,
+          "notional_error_pct": -0.0318,
+          "above_min_order": true
+        },
+        "HYPE": {
+          "target_notional": 454.5455,
+          "qty_spot_raw": 4.931010235791047,
+          "qty_spot_rounded": 4.93,
+          "qty_perp_raw": 4.92865768008083,
+          "qty_perp_rounded": 4.92,
+          "actual_notional": 453.747,
+          "notional_error_pct": -0.1757,
+          "above_min_order": true
+        }
+      },
+      "total_funding_error_pct": 0.10375
+    }
+  ]
+}
