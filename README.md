@@ -38,6 +38,8 @@ data/              本地数据目录（git 忽略，不入库）
 
 ## 研究文档
 
+- [reports/INDEX.md](reports/INDEX.md) — **报告索引与核心结论（先看这个）**
+
 - [docs/DESIGN.md](docs/DESIGN.md) — 研究流程与原则
 - [docs/ARBITRAGE_RESEARCH.md](docs/ARBITRAGE_RESEARCH.md) — 套利类型、成功案例与可行路线
 - [reports/PLAN_100_1000.md](reports/PLAN_100_1000.md) — **$100–$1,000 本金方案对比与推荐**
@@ -63,6 +65,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 
 
 
