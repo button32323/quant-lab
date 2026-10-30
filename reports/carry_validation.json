@@ -1,0 +1,205 @@
+{
+  "window": "2024-12-07 → 2026-10-23",
+  "rows": 686,
+  "capital": 1000.0,
+  "results": {
+    "A0_small": {
+      "cagr": 0.180776,
+      "total_return": 0.36596,
+      "vol": 0.034419,
+      "sharpe": 4.9544,
+      "mdd": 0.007396,
+      "funding_positive_share": 0.9723,
+      "yearly": {
+        "2024": 0.075347,
+        "2025": 0.184117,
+        "2026": 0.075873
+      },
+      "rolling_30d": {
+        "window_days": 30,
+        "p5": 0.0434,
+        "p50": 0.1307,
+        "p95": 0.4266,
+        "share_negative": 0.003,
+        "share_below_10": 0.279
+      },
+      "rolling_90d": {
+        "window_days": 90,
+        "p5": 0.0768,
+        "p50": 0.1211,
+        "p95": 0.26,
+        "share_negative": 0.0,
+        "share_below_10": 0.3238
+      },
+      "bootstrap_1y": {
+        "p5": 0.124735,
+        "p50": 0.17507,
+        "p95": 0.242476,
+        "prob_negative": 0.0,
+        "prob_below_10pct": 0.0065,
+        "samples": 2000,
+        "block": 7,
+        "horizon_days": 365
+      },
+      "stress": {
+        "基线": {
+          "cagr": 0.1808,
+          "mdd": 0.0074
+        },
+        "资金费减半": {
+          "cagr": 0.0873,
+          "mdd": 0.0086
+        },
+        "资金费归零": {
+          "cagr": -0.0139,
+          "mdd": 0.0288
+        },
+        "资金费转负(×-0.5)": {
+          "cagr": -0.1251,
+          "mdd": 0.2162
+        },
+        "basis 波动×2": {
+          "cagr": 0.1704,
+          "mdd": 0.0159
+        },
+        "成本×2": {
+          "cagr": 0.1792,
+          "mdd": 0.0074
+        }
+      },
+      "current_env_annualized": 0.0966
+    },
+    "E_75_25": {
+      "cagr": 0.155411,
+      "total_return": 0.31141,
+      "vol": 0.026871,
+      "sharpe": 5.5068,
+      "mdd": 0.005504,
+      "funding_positive_share": 0.9723,
+      "yearly": {
+        "2024": 0.060052,
+        "2025": 0.161764,
+        "2026": 0.067638
+      },
+      "rolling_30d": {
+        "window_days": 30,
+        "p5": 0.0406,
+        "p50": 0.1157,
+        "p95": 0.3508,
+        "share_negative": 0.0015,
+        "share_below_10": 0.3735
+      },
+      "rolling_90d": {
+        "window_days": 90,
+        "p5": 0.0686,
+        "p50": 0.1105,
+        "p95": 0.2145,
+        "share_negative": 0.0,
+        "share_below_10": 0.396
+      },
+      "bootstrap_1y": {
+        "p5": 0.111036,
+        "p50": 0.151191,
+        "p95": 0.203348,
+        "prob_negative": 0.0,
+        "prob_below_10pct": 0.0165,
+        "samples": 2000,
+        "block": 7,
+        "horizon_days": 365
+      },
+      "stress": {
+        "基线": {
+          "cagr": 0.1554,
+          "mdd": 0.0055
+        },
+        "资金费减半": {
+          "cagr": 0.0751,
+          "mdd": 0.0064
+        },
+        "资金费归零": {
+          "cagr": -0.0109,
+          "mdd": 0.0221
+        },
+        "资金费转负(×-0.5)": {
+          "cagr": -0.1041,
+          "mdd": 0.1806
+        },
+        "basis 波动×2": {
+          "cagr": 0.1475,
+          "mdd": 0.0119
+        },
+        "成本×2": {
+          "cagr": 0.1537,
+          "mdd": 0.0055
+        }
+      },
+      "current_env_annualized": 0.0925
+    },
+    "B0_majors": {
+      "cagr": 0.076197,
+      "total_return": 0.147762,
+      "vol": 0.007151,
+      "sharpe": 10.4619,
+      "mdd": 0.001412,
+      "funding_positive_share": 0.9082,
+      "yearly": {
+        "2024": 0.01437,
+        "2025": 0.090833,
+        "2026": 0.039238
+      },
+      "rolling_30d": {
+        "window_days": 30,
+        "p5": 0.0073,
+        "p50": 0.0741,
+        "p95": 0.166,
+        "share_negative": 0.0152,
+        "share_below_10": 0.7912
+      },
+      "rolling_90d": {
+        "window_days": 90,
+        "p5": 0.0171,
+        "p50": 0.0703,
+        "p95": 0.1332,
+        "share_negative": 0.0,
+        "share_below_10": 0.8154
+      },
+      "bootstrap_1y": {
+        "p5": 0.061241,
+        "p50": 0.075967,
+        "p95": 0.092796,
+        "prob_negative": 0.0,
+        "prob_below_10pct": 0.99,
+        "samples": 2000,
+        "block": 7,
+        "horizon_days": 365
+      },
+      "stress": {
+        "基线": {
+          "cagr": 0.0762,
+          "mdd": 0.0014
+        },
+        "资金费减半": {
+          "cagr": 0.0376,
+          "mdd": 0.0013
+        },
+        "资金费归零": {
+          "cagr": -0.0022,
+          "mdd": 0.0028
+        },
+        "资金费转负(×-0.5)": {
+          "cagr": -0.0435,
+          "mdd": 0.0758
+        },
+        "basis 波动×2": {
+          "cagr": 0.0761,
+          "mdd": 0.0025
+        },
+        "成本×2": {
+          "cagr": 0.0742,
+          "mdd": 0.0014
+        }
+      },
+      "current_env_annualized": 0.0802
+    }
+  }
+}
