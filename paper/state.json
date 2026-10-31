@@ -2,7 +2,7 @@
   "created_at": "2026-10-30T16:40:40+00:00",
   "capital_usd": 1000.0,
   "entry_cost_usd": 3.4426,
-  "funding_accrued_usd": 0.41929018512500005,
+  "funding_accrued_usd": 0.4503983101250001,
   "positions": {
     "PURR": {
       "spot_pair": "PURR/USDC",
@@ -30,17 +30,17 @@
     }
   },
   "funding_last_ts": {
-    "PURR": 1793433600070,
-    "HYPE": 1793433600070
+    "PURR": 1793444400023,
+    "HYPE": 1793444400023
   },
   "funding_stats": {
     "PURR": {
-      "settlements": 16,
-      "positive": 16
+      "settlements": 19,
+      "positive": 19
     },
     "HYPE": {
-      "settlements": 16,
-      "positive": 16
+      "settlements": 19,
+      "positive": 19
     }
   },
   "settlements_log": {
@@ -122,6 +122,21 @@
       },
       {
         "time": 1793433600070,
+        "rate": 1.25e-05,
+        "usd": 0.004687
+      },
+      {
+        "time": 1793437200025,
+        "rate": 1.25e-05,
+        "usd": 0.004687
+      },
+      {
+        "time": 1793440800053,
+        "rate": 1.25e-05,
+        "usd": 0.004687
+      },
+      {
+        "time": 1793444400023,
         "rate": 1.25e-05,
         "usd": 0.004687
       }
@@ -206,12 +221,27 @@
         "time": 1793433600070,
         "rate": 3.03429e-05,
         "usd": 0.013792
+      },
+      {
+        "time": 1793437200025,
+        "rate": 1.25e-05,
+        "usd": 0.005682
+      },
+      {
+        "time": 1793440800053,
+        "rate": 1.25e-05,
+        "usd": 0.005682
+      },
+      {
+        "time": 1793444400023,
+        "rate": 1.25e-05,
+        "usd": 0.005682
       }
     ]
   },
-  "hourly_rows": 21,
+  "hourly_rows": 24,
   "funding_by_asset": {
-    "PURR": 0.14372947500000005,
-    "HYPE": 0.27556071012499994
+    "PURR": 0.15779197500000008,
+    "HYPE": 0.29260633512499995
   }
 }
