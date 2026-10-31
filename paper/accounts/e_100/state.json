@@ -1,0 +1,109 @@
+{
+  "name": "e_100",
+  "created_at": "2026-10-31T14:43:51+00:00",
+  "capital_usd": 100.0,
+  "weights": {
+    "PURR": 0.375,
+    "HYPE": 0.375,
+    "BTC": 0.125,
+    "ETH": 0.125
+  },
+  "entry_cost_usd": 0.354915,
+  "funding_accrued_usd": 0.0,
+  "positions": {
+    "PURR": {
+      "spot_pair": "PURR/USDC",
+      "perp": "PURR",
+      "max_lev": 3.0,
+      "sleeve_usd": 37.5,
+      "qty_spot": 239.0,
+      "qty_perp": 238.0,
+      "notional_spot": 28.061,
+      "notional_perp": 28.0935,
+      "entry_spot": 0.11741,
+      "entry_perp": 0.11804,
+      "entry_fee_usd": 0.116588,
+      "min_order_ok": true
+    },
+    "HYPE": {
+      "spot_pair": "@107",
+      "perp": "HYPE",
+      "max_lev": 10.0,
+      "sleeve_usd": 37.5,
+      "qty_spot": 0.39,
+      "qty_perp": 0.39,
+      "notional_spot": 33.8411,
+      "notional_perp": 33.8696,
+      "entry_spot": 86.772,
+      "entry_perp": 86.845,
+      "entry_fee_usd": 0.140559,
+      "min_order_ok": true
+    },
+    "BTC": {
+      "spot_pair": "@142",
+      "perp": "BTC",
+      "max_lev": 40.0,
+      "sleeve_usd": 12.5,
+      "qty_spot": 0.00015,
+      "qty_perp": 0.00015,
+      "notional_spot": 11.6101,
+      "notional_perp": 11.6251,
+      "entry_spot": 77401.0,
+      "entry_perp": 77501.0,
+      "entry_fee_usd": 0.048244,
+      "min_order_ok": true
+    },
+    "ETH": {
+      "spot_pair": "@151",
+      "perp": "ETH",
+      "max_lev": 25.0,
+      "sleeve_usd": 12.5,
+      "qty_spot": 0.0053,
+      "qty_perp": 0.0053,
+      "notional_spot": 11.9324,
+      "notional_perp": 11.9335,
+      "entry_spot": 2251.4,
+      "entry_perp": 2251.6,
+      "entry_fee_usd": 0.049524,
+      "min_order_ok": true
+    }
+  },
+  "funding_last_ts": {
+    "PURR": 1793457831075,
+    "HYPE": 1793457831075,
+    "BTC": 1793457831075,
+    "ETH": 1793457831075
+  },
+  "funding_stats": {
+    "PURR": {
+      "settlements": 0,
+      "positive": 0
+    },
+    "HYPE": {
+      "settlements": 0,
+      "positive": 0
+    },
+    "BTC": {
+      "settlements": 0,
+      "positive": 0
+    },
+    "ETH": {
+      "settlements": 0,
+      "positive": 0
+    }
+  },
+  "funding_by_asset": {
+    "PURR": 0.0,
+    "HYPE": 0.0,
+    "BTC": 0.0,
+    "ETH": 0.0
+  },
+  "settlements_log": {
+    "PURR": [],
+    "HYPE": [],
+    "BTC": [],
+    "ETH": []
+  },
+  "hourly_rows": 2,
+  "min_order_ok": true
+}

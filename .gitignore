@@ -37,3 +37,9 @@ paper/runner.log
 paper/heartbeat.txt
 paper/STOP
 
+
+#  多账户 paper 运行时
+paper/accounts/runner.log
+paper/accounts/heartbeat.txt
+paper/accounts/STOP
+

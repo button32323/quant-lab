@@ -1,0 +1,65 @@
+{
+  "name": "b0_100",
+  "created_at": "2026-10-31T14:44:34+00:00",
+  "capital_usd": 100.0,
+  "weights": {
+    "BTC": 0.5,
+    "ETH": 0.5
+  },
+  "entry_cost_usd": 0.401407,
+  "funding_accrued_usd": 0.0,
+  "positions": {
+    "BTC": {
+      "spot_pair": "@142",
+      "perp": "BTC",
+      "max_lev": 40.0,
+      "sleeve_usd": 50.0,
+      "qty_spot": 0.00063,
+      "qty_perp": 0.00062,
+      "notional_spot": 48.7633,
+      "notional_perp": 48.0506,
+      "entry_spot": 77402.0,
+      "entry_perp": 77501.0,
+      "entry_fee_usd": 0.202368,
+      "min_order_ok": true
+    },
+    "ETH": {
+      "spot_pair": "@151",
+      "perp": "ETH",
+      "max_lev": 25.0,
+      "sleeve_usd": 50.0,
+      "qty_spot": 0.0213,
+      "qty_perp": 0.0213,
+      "notional_spot": 47.9548,
+      "notional_perp": 47.9612,
+      "entry_spot": 2251.4,
+      "entry_perp": 2251.7,
+      "entry_fee_usd": 0.199039,
+      "min_order_ok": true
+    }
+  },
+  "funding_last_ts": {
+    "BTC": 1793457874087,
+    "ETH": 1793457874087
+  },
+  "funding_stats": {
+    "BTC": {
+      "settlements": 0,
+      "positive": 0
+    },
+    "ETH": {
+      "settlements": 0,
+      "positive": 0
+    }
+  },
+  "funding_by_asset": {
+    "BTC": 0.0,
+    "ETH": 0.0
+  },
+  "settlements_log": {
+    "BTC": [],
+    "ETH": []
+  },
+  "hourly_rows": 2,
+  "min_order_ok": true
+}
