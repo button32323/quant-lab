@@ -209,7 +209,7 @@
       }
     ]
   },
-  "hourly_rows": 20,
+  "hourly_rows": 21,
   "funding_by_asset": {
     "PURR": 0.14372947500000005,
     "HYPE": 0.27556071012499994
