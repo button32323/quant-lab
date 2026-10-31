@@ -44,7 +44,7 @@ scripts/check.ps1
 
 ## 4. 当前系统状态
 
-- Paper 账户：虚拟 $1,000，2026-10-30T16:40:40Z 启动，runner 每小时更新（`.dsh` 之外独立进程）；
+- Paper 账户：虚拟 $1,000，2026-10-30T16:40:40Z 启动；截至 2026-10-31 16:25 已运行 15.7h，NAV $997.29、累计资金费 +$0.419、32 次结算全部正费率、独立对账 PASS；
 - 报告：[`reports/INDEX.md`](INDEX.md)、[`reports/PLAN_100_1000.md`](PLAN_100_1000.md)；
 - 代码仓库：`C:\量化项目`，git 多轮提交，工作区 clean。
 
@@ -52,4 +52,5 @@ scripts/check.ps1
 
 - paper 30 天监控（到期看 `paper/FINAL_REPORT.md` 与 gate）；
 - 若环境改善/资金扩大，再按 `docs/OPERATIONS.md` 的 go-live 清单评估实盘（需逐笔授权）。
+
 

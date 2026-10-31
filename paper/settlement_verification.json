@@ -5,22 +5,34 @@
   "assets": {
     "PURR": {
       "expected_usd": 0.004687,
-      "actual_usd": 0,
-      "diff_usd": -0.004687,
-      "settlements_found": 0,
-      "rows": []
+      "actual_usd": 0.004687,
+      "diff_usd": 0.0,
+      "settlements_found": 1,
+      "rows": [
+        {
+          "time": 1793379600044,
+          "rate": 1.25e-05,
+          "usd": 0.004687
+        }
+      ]
     },
     "HYPE": {
       "expected_usd": 0.009256,
-      "actual_usd": 0,
-      "diff_usd": -0.009256,
-      "settlements_found": 0,
-      "rows": []
+      "actual_usd": 0.007706,
+      "diff_usd": -0.00155,
+      "settlements_found": 1,
+      "rows": [
+        {
+          "time": 1793379600044,
+          "rate": 1.6953e-05,
+          "usd": 0.007706
+        }
+      ]
     }
   },
   "expected_total_usd": 0.013943,
-  "actual_total_usd": 0.0,
-  "diff_total_usd": -0.013943,
+  "actual_total_usd": 0.012393,
+  "diff_total_usd": -0.00155,
   "tolerance_usd": 0.002,
-  "verdict": "PENDING"
+  "verdict": "PASS"
 }

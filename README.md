@@ -4,6 +4,7 @@
 
 ## 从这里开始
 
+0. **[reports/STATUS.md](reports/STATUS.md)** — 最新状态快照（paper 进展/环境/待办）
 1. **[reports/INDEX.md](reports/INDEX.md)** — 报告索引与核心结论（先看这个）
 2. **[reports/PLAN_100_1000.md](reports/PLAN_100_1000.md)** — $100–$1,000 方案对比与分档推荐
 3. **[reports/FAQ.md](reports/FAQ.md)** — 收益/风险/最低本金等常见问题
@@ -77,6 +78,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 
 
 
