@@ -6,7 +6,7 @@
 
 ## 版本
 
-- 当前版本：**v0.2.0**（见 [CHANGELOG.md](CHANGELOG.md)）
+- 当前版本：**v0.2.0**（[CHANGELOG.md](CHANGELOG.md) ｜ [Releases](https://github.com/button32323/quant-lab/releases)）
 - 版本/发布约定：[docs/VERSIONING.md](docs/VERSIONING.md)
 - CI：`.github/workflows/tests.yml`（推送后自动跑 41 个单元测试）
 - 远程仓库：**https://github.com/button32323/quant-lab**（public，CI ✅）
@@ -89,6 +89,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 
 
 
