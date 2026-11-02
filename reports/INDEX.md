@@ -33,6 +33,7 @@
 | [FUNDING_TIMING.md](FUNDING_TIMING.md) | 资金费环境分位/风控阈值 | 当前处历史偏低区间（后 10–13%） |
 | [CARRY_MULTIASSET.md](CARRY_MULTIASSET.md) | 多资产分散检验 | 加入 AZTEC/STABLE 反而恶化，维持 A0 |
 | [CARRY_SOURCE_CHECK.md](CARRY_SOURCE_CHECK.md) | 数据源交叉验证 | 两数据源完全一致，延长到 10-30 仍 +18.21% |
+| [CARRY_LEVERAGE.md](CARRY_LEVERAGE.md) | A0 加杠杆测算 | 2x 名义历史年化 +30%、回撤 1.3%；资金费转负时 2x 可能 −34%/回撤 53% |
 | [BTC_MOM90_REPORT.md](BTC_MOM90_REPORT.md) | BTC 90 日动量（淘汰） | 全样本 MDD 66.7%，样本外 Sharpe 0.31 |
 | [MULTI_ASSET_MOMENTUM.md](MULTI_ASSET_MOMENTUM.md) | 多资产动量（淘汰） | 样本外不如 BTC 买入持有 |
 
@@ -54,6 +55,7 @@
 - 启动：2026-10-30T16:40:40Z（虚拟 $1,000，PURR+HYPE carry），已运行约 15.7h；NAV **$997.29**，累计资金费 **+$0.419**，32 次结算全部正费率，对账 PASS；
 - 实时报告：[../paper/REPORT.md](../paper/REPORT.md)、最终报告 [../paper/FINAL_REPORT.md](../paper/FINAL_REPORT.md)、告警 [../paper/ALERTS.md](../paper/ALERTS.md)；
 - 30 天到期后看 gate：`python src/quantlab/paper.py gate`。
+
 
 
 

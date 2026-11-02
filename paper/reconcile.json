@@ -2,13 +2,13 @@
   "created_at": "2026-10-30T16:40:40+00:00",
   "assets": {
     "PURR": {
-      "expected_usd": 0.167167,
-      "actual_usd": 0.167167,
+      "expected_usd": 0.423571,
+      "actual_usd": 0.423571,
       "diff_usd": 0.0
     },
     "HYPE": {
-      "expected_usd": 0.32588,
-      "actual_usd": 0.32588,
+      "expected_usd": 0.948756,
+      "actual_usd": 0.948756,
       "diff_usd": -0.0
     }
   },

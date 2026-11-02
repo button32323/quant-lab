@@ -1,0 +1,28 @@
+{
+  "account": "e_100",
+  "created_at": "2026-10-31T14:43:51+00:00",
+  "assets": {
+    "PURR": {
+      "expected_usd": 0.016505,
+      "actual_usd": 0.016505,
+      "diff_usd": 0.0
+    },
+    "HYPE": {
+      "expected_usd": 0.045764,
+      "actual_usd": 0.045764,
+      "diff_usd": -0.0
+    },
+    "BTC": {
+      "expected_usd": 0.00683,
+      "actual_usd": 0.00683,
+      "diff_usd": -0.0
+    },
+    "ETH": {
+      "expected_usd": 0.00661,
+      "actual_usd": 0.00661,
+      "diff_usd": 0.0
+    }
+  },
+  "overall": "PASS",
+  "diff_total_usd": 0.0
+}

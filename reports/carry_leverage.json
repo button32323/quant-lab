@@ -1,0 +1,74 @@
+{
+  "window": "2024-12-07 → 2026-10-23",
+  "base_exposure": 0.83,
+  "borrow_rate": 0.06,
+  "results": {
+    "1.0": {
+      "exposure_mult": 1.0,
+      "exposure_vs_capital": 0.83,
+      "borrowed_usd": 0.0,
+      "cagr": 0.1808,
+      "mdd": 0.0074,
+      "sharpe": 4.95,
+      "vol": 0.0344
+    },
+    "1.2": {
+      "exposure_mult": 1.2,
+      "exposure_vs_capital": 0.995,
+      "borrowed_usd": 165.91,
+      "cagr": 0.2056,
+      "mdd": 0.0087,
+      "sharpe": 4.77,
+      "vol": 0.0403
+    },
+    "1.5": {
+      "exposure_mult": 1.5,
+      "exposure_vs_capital": 1.244,
+      "borrowed_usd": 414.77,
+      "cagr": 0.2421,
+      "mdd": 0.0105,
+      "sharpe": 4.6,
+      "vol": 0.0486
+    },
+    "2.0": {
+      "exposure_mult": 2.0,
+      "exposure_vs_capital": 1.659,
+      "borrowed_usd": 829.55,
+      "cagr": 0.3009,
+      "mdd": 0.0132,
+      "sharpe": 4.44,
+      "vol": 0.0614
+    },
+    "3.0": {
+      "exposure_mult": 3.0,
+      "exposure_vs_capital": 2.489,
+      "borrowed_usd": 1659.09,
+      "cagr": 0.412,
+      "mdd": 0.0179,
+      "sharpe": 4.29,
+      "vol": 0.0839
+    }
+  },
+  "stress_funding_negative": {
+    "1.0": {
+      "cagr": -0.1251,
+      "mdd": 0.2162
+    },
+    "1.2": {
+      "cagr": -0.1636,
+      "mdd": 0.2786
+    },
+    "1.5": {
+      "cagr": -0.2245,
+      "mdd": 0.3725
+    },
+    "2.0": {
+      "cagr": -0.3366,
+      "mdd": 0.5303
+    },
+    "3.0": {
+      "cagr": -0.6392,
+      "mdd": 0.85
+    }
+  }
+}

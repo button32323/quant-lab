@@ -1,0 +1,18 @@
+{
+  "account": "a0_100",
+  "created_at": "2026-10-31T14:43:45+00:00",
+  "assets": {
+    "PURR": {
+      "expected_usd": 0.021983,
+      "actual_usd": 0.021983,
+      "diff_usd": 0.0
+    },
+    "HYPE": {
+      "expected_usd": 0.061011,
+      "actual_usd": 0.061011,
+      "diff_usd": 0.0
+    }
+  },
+  "overall": "PASS",
+  "diff_total_usd": 0.0
+}
