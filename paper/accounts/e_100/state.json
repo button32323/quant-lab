@@ -9,7 +9,7 @@
     "ETH": 0.125
   },
   "entry_cost_usd": 0.354915,
-  "funding_accrued_usd": 0.07784732544860999,
+  "funding_accrued_usd": 0.07891634669861,
   "positions": {
     "PURR": {
       "spot_pair": "PURR/USDC",
@@ -69,34 +69,34 @@
     }
   },
   "funding_last_ts": {
-    "PURR": 1793631600052,
-    "HYPE": 1793631600052,
-    "BTC": 1793631600052,
-    "ETH": 1793631600052
+    "PURR": 1793635200015,
+    "HYPE": 1793635200015,
+    "BTC": 1793635200015,
+    "ETH": 1793635200015
   },
   "funding_stats": {
     "PURR": {
-      "settlements": 49,
-      "positive": 49
+      "settlements": 50,
+      "positive": 50
     },
     "HYPE": {
-      "settlements": 49,
-      "positive": 49
+      "settlements": 50,
+      "positive": 50
     },
     "BTC": {
-      "settlements": 49,
-      "positive": 49
+      "settlements": 50,
+      "positive": 50
     },
     "ETH": {
-      "settlements": 49,
-      "positive": 49
+      "settlements": 50,
+      "positive": 50
     }
   },
   "funding_by_asset": {
-    "PURR": 0.01720726875,
-    "HYPE": 0.04661104208055998,
-    "BTC": 0.007120373749999994,
-    "ETH": 0.006908640868050004
+    "PURR": 0.0175584375,
+    "HYPE": 0.04703441208055998,
+    "BTC": 0.0072656874999999935,
+    "ETH": 0.007057809618050004
   },
   "settlements_log": {
     "PURR": [
@@ -342,6 +342,11 @@
       },
       {
         "time": 1793631600052,
+        "rate": 1.25e-05,
+        "usd": 0.000351
+      },
+      {
+        "time": 1793635200015,
         "rate": 1.25e-05,
         "usd": 0.000351
       }
@@ -591,6 +596,11 @@
         "time": 1793631600052,
         "rate": 1.25e-05,
         "usd": 0.000423
+      },
+      {
+        "time": 1793635200015,
+        "rate": 1.25e-05,
+        "usd": 0.000423
       }
     ],
     "BTC": [
@@ -836,6 +846,11 @@
       },
       {
         "time": 1793631600052,
+        "rate": 1.25e-05,
+        "usd": 0.000145
+      },
+      {
+        "time": 1793635200015,
         "rate": 1.25e-05,
         "usd": 0.000145
       }
@@ -1085,9 +1100,14 @@
         "time": 1793631600052,
         "rate": 1.25e-05,
         "usd": 0.000149
+      },
+      {
+        "time": 1793635200015,
+        "rate": 1.25e-05,
+        "usd": 0.000149
       }
     ]
   },
-  "hourly_rows": 51,
+  "hourly_rows": 52,
   "min_order_ok": true
 }

@@ -7,7 +7,7 @@
     "ETH": 0.5
   },
   "entry_cost_usd": 0.401407,
-  "funding_accrued_usd": 0.05719708848196008,
+  "funding_accrued_usd": 0.05839723598196009,
   "positions": {
     "BTC": {
       "spot_pair": "@142",
@@ -39,22 +39,22 @@
     }
   },
   "funding_last_ts": {
-    "BTC": 1793631600052,
-    "ETH": 1793631600052
+    "BTC": 1793635200015,
+    "ETH": 1793635200015
   },
   "funding_stats": {
     "BTC": {
-      "settlements": 49,
-      "positive": 49
+      "settlements": 50,
+      "positive": 50
     },
     "ETH": {
-      "settlements": 49,
-      "positive": 49
+      "settlements": 50,
+      "positive": 50
     }
   },
   "funding_by_asset": {
-    "BTC": 0.029430992500000003,
-    "ETH": 0.027766095981959973
+    "BTC": 0.030031625000000003,
+    "ETH": 0.02836561098195997
   },
   "settlements_log": {
     "BTC": [
@@ -300,6 +300,11 @@
       },
       {
         "time": 1793631600052,
+        "rate": 1.25e-05,
+        "usd": 0.000601
+      },
+      {
+        "time": 1793635200015,
         "rate": 1.25e-05,
         "usd": 0.000601
       }
@@ -549,9 +554,14 @@
         "time": 1793631600052,
         "rate": 1.25e-05,
         "usd": 0.0006
+      },
+      {
+        "time": 1793635200015,
+        "rate": 1.25e-05,
+        "usd": 0.0006
       }
     ]
   },
-  "hourly_rows": 51,
+  "hourly_rows": 52,
   "min_order_ok": true
 }

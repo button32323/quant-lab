@@ -2,6 +2,13 @@
 
 > 一个从零开始的量化研究项目。原则：**数据可复现、成本口径统一、先 paper 后实盘、实盘逐笔授权**。
 
+## 版本
+
+- 当前版本：**v0.2.0**（见 [CHANGELOG.md](CHANGELOG.md)）
+- 版本/发布约定：[docs/VERSIONING.md](docs/VERSIONING.md)
+- CI：`.github/workflows/tests.yml`（推送后自动跑 41 个单元测试）
+- 仓库远程：尚未推送 GitHub（见下方"GitHub 状态"）
+
 ## 从这里开始
 
 0. **[reports/STATUS.md](reports/STATUS.md)** — 最新状态快照（paper 进展/环境/待办）
@@ -80,6 +87,7 @@ data/              本地数据目录（git 忽略，不入库）
 
 - 旧项目归档：`C:\量化备份\`（**含钱包私钥，务必离线保管，不要上传**）；
 - 新项目不继承旧项目的任何密钥/钱包文件。
+
 
 
 
