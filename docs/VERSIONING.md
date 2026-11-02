@@ -1,4 +1,4 @@
-# 版本与发布约定
+﻿# 版本与发布约定
 
 ## 分支
 
@@ -25,11 +25,12 @@
 ## GitHub 状态
 
 - 本地仓库：`C:\量化项目`（44+ commits，含 paper 运行数据）；
-- 远程仓库：**尚未创建/推送**（需要 GitHub 认证或手动建仓）；
+- 远程仓库：**https://github.com/button32323/quant-lab**（public，已推送 main + tags）；
 - CI：`.github/workflows/tests.yml` 已就绪，推送后自动运行单元测试；
-- 标签：`v0.1.0`、`v0.2.0` 已在本地创建，推送后出现在 GitHub。
+- 标签：`v0.1.0`、`v0.2.0` 已推送到 GitHub；CI `tests` 已通过（run 41485398918）。
 
 ## 敏感数据
 
 - `data/`、`paper/*.log`、`paper/heartbeat.txt`、`paper/STOP` 已在 `.gitignore`；
 - 仓库内无 API 密钥/私钥/助记词（`scripts/check.ps1` 每次扫描）。
+
