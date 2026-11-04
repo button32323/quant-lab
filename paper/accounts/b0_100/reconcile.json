@@ -3,14 +3,14 @@
   "created_at": "2026-10-31T14:44:34+00:00",
   "assets": {
     "BTC": {
-      "expected_usd": 0.039041,
-      "actual_usd": 0.039041,
+      "expected_usd": 0.05313,
+      "actual_usd": 0.05313,
       "diff_usd": 0.0
     },
     "ETH": {
-      "expected_usd": 0.036132,
-      "actual_usd": 0.036132,
-      "diff_usd": -0.0
+      "expected_usd": 0.050521,
+      "actual_usd": 0.050521,
+      "diff_usd": 0.0
     }
   },
   "overall": "PASS",
