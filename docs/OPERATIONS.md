@@ -53,6 +53,10 @@ python -m unittest discover -s tests -v
 python scripts/data/fetch_btc_daily.py
 
 # 回测与报告
+python scripts/data/refresh_all.py               # 全量数据刷新
+python scripts/research/run_carry_suite.py         # 全面 carry 套件
+python scripts/research/run_directional_suite.py   # 全面方向性套件
+python scripts/research/build_all_backtests_report.py  # 汇总报告
 python scripts/research/carry_capital_tiers.py    # A0 分档
 python scripts/research/carry_majors.py           # BTC/ETH carry
 python scripts/research/carry_combined.py         # 组合配置
@@ -63,7 +67,7 @@ python scripts/research/funding_regime.py         # 资金费环境
 python scripts/research/paper_probability.py      # paper 通过概率
 python scripts/research/order_rounding.py         # 下单取整
 python scripts/research/allocation_sensitivity.py # 配比敏感性
-python scripts/research/btc_mom90.py              # BTC 90 日动量（淘汰）
+python scripts/research/btc_mom90.py              # BTC 90 日动量（修正版，未采用）
 python scripts/research/multi_asset_momentum.py   # 多资产动量（淘汰）
 ```
 
@@ -100,5 +104,7 @@ python scripts/research/multi_asset_momentum.py   # 多资产动量（淘汰）
 - 本仓库不保存任何私钥/助记词/API 密钥；
 - 不做未经 paper 验证的策略实盘；
 - 不承诺收益：历史回测 ≠ 未来表现。
+
+
 
 

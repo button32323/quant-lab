@@ -9,7 +9,7 @@
 3. **当前资金费环境约 +9.66%/年**（近 30 天），对应 $100 本金约 **$10/年**、$1,000 约 **$97/年**——收益绝对值很小，适合练手/验证，不是收入来源；
 4. 10% 净收益门槛需要毛资金费 ≥ **10.34%**，当前环境差约 0.7pp；
 5. **paper 30 天大概率不过 10% 年化门禁**（一次建仓成本 −0.34% 被 30 天窗口年化放大），paper 主要用于验证执行/对账；
-6. 淘汰方案：BTC 90 日动量（MDD 66.7%、样本外 Sharpe 0.31）、多资产动量（样本外 Sharpe ≤0.69、MDD 48–67%）、多资产小市值分散（4 资产近 254 天 −4.97%）。
+6. 淘汰方案：BTC 90 日动量（全样本 MDD 66.7%；修正后连续 OOS Sharpe 0.77，但回撤门槛不过）、多资产动量（样本外 Sharpe ≤0.69、MDD 48–67%）、多资产小市值分散（4 资产近 254 天 −4.97%）。
 
 ## 快速问答
 
@@ -34,12 +34,16 @@
 | [CARRY_MULTIASSET.md](CARRY_MULTIASSET.md) | 多资产分散检验 | 加入 AZTEC/STABLE 反而恶化，维持 A0 |
 | [CARRY_SOURCE_CHECK.md](CARRY_SOURCE_CHECK.md) | 数据源交叉验证 | 两数据源完全一致，延长到 10-30 仍 +18.21% |
 | [CARRY_LEVERAGE.md](CARRY_LEVERAGE.md) | A0 加杠杆测算 | 2x 名义历史年化 +30%、回撤 1.3%；资金费转负时 2x 可能 −34%/回撤 53% |
-| [BTC_MOM90_REPORT.md](BTC_MOM90_REPORT.md) | BTC 90 日动量（淘汰） | 全样本 MDD 66.7%，样本外 Sharpe 0.31 |
+| [BTC_MOM90_REPORT.md](BTC_MOM90_REPORT.md) | BTC 90 日动量（修正版） | 全样本 MDD 66.7%；连续 OOS Sharpe 0.77（修正旧误报） |
 | [MULTI_ASSET_MOMENTUM.md](MULTI_ASSET_MOMENTUM.md) | 多资产动量（淘汰） | 样本外不如 BTC 买入持有 |
 
 ## 外部参考
 
 - [GITHUB_LEARNINGS.md](GITHUB_LEARNINGS.md) — GitHub 开源量化/套利项目可借鉴清单（ccxt/官方 SDK/回测真实性/成本优先）
+
+## 全面回测（2026-11-04 新增）
+
+- [ALL_BACKTESTS.md](ALL_BACKTESTS.md) — 所有可行策略族统一回测（carry + 方向性，含数据质量筛查与修正）
 
 ## 版本
 
@@ -59,6 +63,8 @@
 - 启动：2026-10-30T16:40:40Z（虚拟 $1,000，PURR+HYPE carry），已运行约 15.7h；NAV **$997.29**，累计资金费 **+$0.419**，32 次结算全部正费率，对账 PASS；
 - 实时报告：[../paper/REPORT.md](../paper/REPORT.md)、最终报告 [../paper/FINAL_REPORT.md](../paper/FINAL_REPORT.md)、告警 [../paper/ALERTS.md](../paper/ALERTS.md)；
 - 30 天到期后看 gate：`python src/quantlab/paper.py gate`。
+
+
 
 
 

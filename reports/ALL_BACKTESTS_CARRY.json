@@ -1,0 +1,468 @@
+{
+  "capital": 1000.0,
+  "entry_cost_per_leg": 0.00415,
+  "valid_assets": [
+    "PURR",
+    "HYPE",
+    "BTC",
+    "ETH"
+  ],
+  "excluded": {
+    "AZTEC": {
+      "coin": "AZTEC",
+      "rows": 265,
+      "window": "2026-02-13 → 2026-11-04",
+      "spot_vol_30d": 532.0,
+      "perp_vol_30d": 795281.0,
+      "max_abs_daily_ret": 1.05,
+      "capacity_max_capital": 7.0,
+      "valid": false,
+      "reasons": [
+        "容量仅$7"
+      ]
+    },
+    "BERA": {
+      "coin": "BERA",
+      "rows": 634,
+      "window": "2025-02-07 → 2026-11-02",
+      "spot_vol_30d": 0.0,
+      "perp_vol_30d": 452778.0,
+      "max_abs_daily_ret": 13.71,
+      "capacity_max_capital": 0.0,
+      "valid": false,
+      "reasons": [
+        "异常日收益13.7x",
+        "容量仅$0"
+      ]
+    },
+    "MON": {
+      "coin": "MON",
+      "rows": 385,
+      "window": "2025-10-09 → 2026-10-28",
+      "spot_vol_30d": 2.0,
+      "perp_vol_30d": 8221037.0,
+      "max_abs_daily_ret": 18.41,
+      "capacity_max_capital": 0.0,
+      "valid": false,
+      "reasons": [
+        "异常日收益18.4x",
+        "容量仅$0"
+      ]
+    },
+    "PUMP": {
+      "coin": "PUMP",
+      "rows": 482,
+      "window": "2025-07-11 → 2026-11-04",
+      "spot_vol_30d": 656.0,
+      "perp_vol_30d": 91401090.0,
+      "max_abs_daily_ret": 0.28,
+      "capacity_max_capital": 7.0,
+      "valid": false,
+      "reasons": [
+        "容量仅$7"
+      ]
+    },
+    "STABLE": {
+      "coin": "STABLE",
+      "rows": 331,
+      "window": "2025-12-09 → 2026-11-04",
+      "spot_vol_30d": 3784.0,
+      "perp_vol_30d": 165185.0,
+      "max_abs_daily_ret": 0.4,
+      "capacity_max_capital": 50.0,
+      "valid": false,
+      "reasons": [
+        "容量仅$50"
+      ]
+    },
+    "TRUMP": {
+      "coin": "TRUMP",
+      "rows": 638,
+      "window": "2025-01-19 → 2026-10-18",
+      "spot_vol_30d": 7.0,
+      "perp_vol_30d": 4744834.0,
+      "max_abs_daily_ret": 15.44,
+      "capacity_max_capital": 0.0,
+      "valid": false,
+      "reasons": [
+        "异常日收益15.4x",
+        "容量仅$0"
+      ]
+    }
+  },
+  "single": {
+    "PURR": {
+      "assets": [
+        "PURR"
+      ],
+      "window": "2024-11-05 → 2026-11-04",
+      "days": 729,
+      "total_return": 0.493008,
+      "cagr": 0.222223,
+      "vol": 0.067926,
+      "sharpe": 2.9806,
+      "mdd": 0.02674,
+      "funding_usd": 546.14,
+      "basis_usd": -50.02,
+      "funding_positive_share": 0.9644,
+      "min_notional": 750.0,
+      "capacity_max_capital": 28908.0,
+      "oos_return": 0.09385
+    },
+    "HYPE": {
+      "assets": [
+        "HYPE"
+      ],
+      "window": "2024-12-06 → 2026-11-04",
+      "days": 698,
+      "total_return": 0.343893,
+      "cagr": 0.167145,
+      "vol": 0.020736,
+      "sharpe": 7.5112,
+      "mdd": 0.005132,
+      "funding_usd": 348.0,
+      "basis_usd": -0.34,
+      "funding_positive_share": 0.9628,
+      "min_notional": 909.09,
+      "capacity_max_capital": 1360541.0,
+      "oos_return": 0.05621
+    },
+    "BTC": {
+      "assets": [
+        "BTC"
+      ],
+      "window": "2023-05-12 → 2026-11-03",
+      "days": 1271,
+      "total_return": 0.464375,
+      "cagr": 0.115761,
+      "vol": 0.011357,
+      "sharpe": 9.8011,
+      "mdd": 0.010959,
+      "funding_usd": 469.62,
+      "basis_usd": -1.2,
+      "funding_positive_share": 0.8797,
+      "min_notional": 975.61,
+      "capacity_max_capital": 17188929.0,
+      "oos_return": 0.031461
+    },
+    "ETH": {
+      "assets": [
+        "ETH"
+      ],
+      "window": "2023-05-12 → 2026-11-03",
+      "days": 1271,
+      "total_return": 0.459573,
+      "cagr": 0.114709,
+      "vol": 0.012293,
+      "sharpe": 8.9102,
+      "mdd": 0.009397,
+      "funding_usd": 466.4,
+      "basis_usd": -2.84,
+      "funding_positive_share": 0.8766,
+      "min_notional": 961.54,
+      "capacity_max_capital": 10794774.0,
+      "oos_return": 0.033005
+    }
+  },
+  "pairs": {
+    "PURR+HYPE": {
+      "assets": [
+        "PURR",
+        "HYPE"
+      ],
+      "window": "2024-12-06 → 2026-11-04",
+      "days": 698,
+      "total_return": 0.377003,
+      "cagr": 0.182095,
+      "vol": 0.034181,
+      "sharpe": 4.8493,
+      "mdd": 0.007348,
+      "funding_usd": 399.38,
+      "basis_usd": -18.93,
+      "funding_positive_share": 0.9728,
+      "min_notional": 375.0,
+      "capacity_max_capital": 56510.0,
+      "oos_return": 0.078146
+    },
+    "PURR+BTC": {
+      "assets": [
+        "PURR",
+        "BTC"
+      ],
+      "window": "2024-11-05 → 2026-11-03",
+      "days": 728,
+      "total_return": 0.342114,
+      "cagr": 0.158965,
+      "vol": 0.036512,
+      "sharpe": 4.0772,
+      "mdd": 0.012151,
+      "funding_usd": 371.32,
+      "basis_usd": -25.62,
+      "funding_positive_share": 0.9575,
+      "min_notional": 375.0,
+      "capacity_max_capital": 57871.0,
+      "oos_return": 0.068123
+    },
+    "PURR+ETH": {
+      "assets": [
+        "PURR",
+        "ETH"
+      ],
+      "window": "2024-11-05 → 2026-11-03",
+      "days": 728,
+      "total_return": 0.334116,
+      "cagr": 0.155497,
+      "vol": 0.037125,
+      "sharpe": 3.9354,
+      "mdd": 0.012563,
+      "funding_usd": 364.84,
+      "basis_usd": -27.17,
+      "funding_positive_share": 0.9465,
+      "min_notional": 375.0,
+      "capacity_max_capital": 57871.0,
+      "oos_return": 0.069402
+    },
+    "HYPE+BTC": {
+      "assets": [
+        "HYPE",
+        "BTC"
+      ],
+      "window": "2024-12-06 → 2026-11-03",
+      "days": 697,
+      "total_return": 0.253231,
+      "cagr": 0.125476,
+      "vol": 0.012355,
+      "sharpe": 9.6468,
+      "mdd": 0.002324,
+      "funding_usd": 256.73,
+      "basis_usd": 0.41,
+      "funding_positive_share": 0.9527,
+      "min_notional": 454.55,
+      "capacity_max_capital": 2723199.0,
+      "oos_return": 0.048463
+    },
+    "HYPE+ETH": {
+      "assets": [
+        "HYPE",
+        "ETH"
+      ],
+      "window": "2024-12-06 → 2026-11-03",
+      "days": 697,
+      "total_return": 0.243004,
+      "cagr": 0.120657,
+      "vol": 0.012002,
+      "sharpe": 9.566,
+      "mdd": 0.003205,
+      "funding_usd": 247.44,
+      "basis_usd": -0.56,
+      "funding_positive_share": 0.9599,
+      "min_notional": 454.55,
+      "capacity_max_capital": 2723199.0,
+      "oos_return": 0.049753
+    },
+    "BTC+ETH": {
+      "assets": [
+        "BTC",
+        "ETH"
+      ],
+      "window": "2023-05-12 → 2026-11-03",
+      "days": 1271,
+      "total_return": 0.461974,
+      "cagr": 0.115236,
+      "vol": 0.010271,
+      "sharpe": 10.7495,
+      "mdd": 0.006759,
+      "funding_usd": 468.01,
+      "basis_usd": -2.02,
+      "funding_positive_share": 0.9072,
+      "min_notional": 480.77,
+      "capacity_max_capital": 21589548.0,
+      "oos_return": 0.032231
+    }
+  },
+  "presets": {
+    "A0_PURR_HYPE": {
+      "assets": [
+        "PURR",
+        "HYPE"
+      ],
+      "window": "2024-12-06 → 2026-11-04",
+      "days": 698,
+      "total_return": 0.377003,
+      "cagr": 0.182095,
+      "vol": 0.034181,
+      "sharpe": 4.8493,
+      "mdd": 0.007348,
+      "funding_usd": 399.38,
+      "basis_usd": -18.93,
+      "funding_positive_share": 0.9728,
+      "min_notional": 375.0,
+      "capacity_max_capital": 56510.0,
+      "oos_return": 0.078146
+    },
+    "B0_BTC_ETH": {
+      "assets": [
+        "BTC",
+        "ETH"
+      ],
+      "window": "2023-05-12 → 2026-11-03",
+      "days": 1271,
+      "total_return": 0.461974,
+      "cagr": 0.115236,
+      "vol": 0.010271,
+      "sharpe": 10.7495,
+      "mdd": 0.006759,
+      "funding_usd": 468.01,
+      "basis_usd": -2.02,
+      "funding_positive_share": 0.9072,
+      "min_notional": 480.77,
+      "capacity_max_capital": 21589548.0,
+      "oos_return": 0.032231
+    },
+    "PURR_HYPE_BTC": {
+      "assets": [
+        "PURR",
+        "HYPE",
+        "BTC"
+      ],
+      "window": "2024-12-06 → 2026-11-03",
+      "days": 697,
+      "total_return": 0.305003,
+      "cagr": 0.149589,
+      "vol": 0.024098,
+      "sharpe": 5.7497,
+      "mdd": 0.004774,
+      "funding_usd": 321.34,
+      "basis_usd": -12.7,
+      "funding_positive_share": 0.9713,
+      "min_notional": 250.0,
+      "capacity_max_capital": 84847.0,
+      "oos_return": 0.065998
+    },
+    "ALL4": {
+      "assets": [
+        "PURR",
+        "HYPE",
+        "BTC",
+        "ETH"
+      ],
+      "window": "2024-12-06 → 2026-11-03",
+      "days": 697,
+      "total_return": 0.264363,
+      "cagr": 0.1307,
+      "vol": 0.018977,
+      "sharpe": 6.4461,
+      "mdd": 0.003676,
+      "funding_usd": 277.77,
+      "basis_usd": -9.67,
+      "funding_positive_share": 0.9642,
+      "min_notional": 187.5,
+      "capacity_max_capital": 113129.0,
+      "oos_return": 0.060611
+    }
+  },
+  "bootstrap": {
+    "A0_PURR_HYPE": {
+      "horizon_days": 90,
+      "p5": 0.0232,
+      "p50": 0.0468,
+      "p95": 0.0796,
+      "prob_negative": 0.0005,
+      "cagr_from_median": 0.2037
+    },
+    "B0_BTC_ETH": {
+      "horizon_days": 90,
+      "p5": 0.0182,
+      "p50": 0.0326,
+      "p95": 0.0525,
+      "prob_negative": 0.0,
+      "cagr_from_median": 0.1389
+    },
+    "ALL4": {
+      "horizon_days": 90,
+      "p5": 0.0193,
+      "p50": 0.0331,
+      "p95": 0.0521,
+      "prob_negative": 0.0,
+      "cagr_from_median": 0.141
+    }
+  },
+  "cost_sensitivity": {
+    "cost×0.5": {
+      "assets": [
+        "PURR",
+        "HYPE"
+      ],
+      "window": "2024-12-06 → 2026-11-04",
+      "days": 698,
+      "total_return": 0.378724,
+      "cagr": 0.182867,
+      "vol": 0.034132,
+      "sharpe": 4.8492,
+      "mdd": 0.007338,
+      "funding_usd": 399.38,
+      "basis_usd": -18.93,
+      "funding_positive_share": 0.9728,
+      "min_notional": 375.0,
+      "capacity_max_capital": 56510.0,
+      "oos_return": 0.078041
+    },
+    "cost×2": {
+      "assets": [
+        "PURR",
+        "HYPE"
+      ],
+      "window": "2024-12-06 → 2026-11-04",
+      "days": 698,
+      "total_return": 0.373561,
+      "cagr": 0.180548,
+      "vol": 0.034281,
+      "sharpe": 4.8496,
+      "mdd": 0.00737,
+      "funding_usd": 399.38,
+      "basis_usd": -18.93,
+      "funding_positive_share": 0.9728,
+      "min_notional": 375.0,
+      "capacity_max_capital": 56510.0,
+      "oos_return": 0.078358
+    },
+    "funding×0.5": {
+      "assets": [
+        "PURR",
+        "HYPE"
+      ],
+      "window": "2024-12-06 → 2026-11-04",
+      "days": 698,
+      "total_return": 0.177314,
+      "cagr": 0.089109,
+      "vol": 0.03546,
+      "sharpe": 2.3885,
+      "mdd": 0.008552,
+      "funding_usd": 199.69,
+      "basis_usd": -18.93,
+      "funding_positive_share": 0.9728,
+      "min_notional": 375.0,
+      "capacity_max_capital": 56510.0,
+      "oos_return": 0.03801
+    },
+    "funding×0": {
+      "assets": [
+        "PURR",
+        "HYPE"
+      ],
+      "window": "2024-12-06 → 2026-11-04",
+      "days": 698,
+      "total_return": -0.022375,
+      "cagr": -0.011764,
+      "vol": 0.039014,
+      "sharpe": -0.2952,
+      "mdd": 0.028709,
+      "funding_usd": 0.0,
+      "basis_usd": -18.93,
+      "funding_positive_share": 0.0,
+      "min_notional": 375.0,
+      "capacity_max_capital": 56510.0,
+      "oos_return": -0.013706
+    }
+  }
+}

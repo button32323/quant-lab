@@ -1,0 +1,144 @@
+{
+  "binance": {
+    "BTC": {
+      "rows": 3366,
+      "start": "2017-08-17",
+      "end": "2026-11-03",
+      "duplicates": 0,
+      "gaps": 0
+    },
+    "ETH": {
+      "rows": 3366,
+      "start": "2017-08-17",
+      "end": "2026-11-03",
+      "duplicates": 0,
+      "gaps": 0
+    },
+    "SOL": {
+      "rows": 2276,
+      "start": "2020-08-11",
+      "end": "2026-11-03",
+      "duplicates": 0,
+      "gaps": 0
+    },
+    "BNB": {
+      "rows": 3285,
+      "start": "2017-11-06",
+      "end": "2026-11-03",
+      "duplicates": 0,
+      "gaps": 0
+    }
+  },
+  "hl": {
+    "PURR": {
+      "funding_rows": 17523,
+      "funding_start": "2024-11-04",
+      "funding_end": "2026-11-04",
+      "perp_rows": 731,
+      "perp_start": "2024-11-04",
+      "perp_end": "2026-11-04",
+      "spot_rows": 933,
+      "spot_start": "2024-04-16",
+      "spot_end": "2026-11-04"
+    },
+    "HYPE": {
+      "funding_rows": 16779,
+      "funding_start": "2024-12-05",
+      "funding_end": "2026-11-04",
+      "perp_rows": 700,
+      "perp_start": "2024-12-05",
+      "perp_end": "2026-11-04",
+      "spot_rows": 706,
+      "spot_start": "2024-11-29",
+      "spot_end": "2026-11-04"
+    },
+    "AZTEC": {
+      "funding_rows": 6364,
+      "funding_start": "2026-02-12",
+      "funding_end": "2026-11-04",
+      "perp_rows": 266,
+      "perp_start": "2026-02-12",
+      "perp_end": "2026-11-04",
+      "spot_rows": 266,
+      "spot_start": "2026-02-12",
+      "spot_end": "2026-11-04"
+    },
+    "BERA": {
+      "funding_rows": 15263,
+      "funding_start": "2025-02-06",
+      "funding_end": "2026-11-04",
+      "perp_rows": 637,
+      "perp_start": "2025-02-06",
+      "perp_end": "2026-11-04",
+      "spot_rows": 699,
+      "spot_start": "2024-12-04",
+      "spot_end": "2026-11-02"
+    },
+    "MON": {
+      "funding_rows": 9416,
+      "funding_start": "2025-10-08",
+      "funding_end": "2026-11-04",
+      "perp_rows": 393,
+      "perp_start": "2025-10-08",
+      "perp_end": "2026-11-04",
+      "spot_rows": 665,
+      "spot_start": "2025-01-02",
+      "spot_end": "2026-10-28"
+    },
+    "PUMP": {
+      "funding_rows": 11577,
+      "funding_start": "2025-07-10",
+      "funding_end": "2026-11-04",
+      "perp_rows": 483,
+      "perp_start": "2025-07-10",
+      "perp_end": "2026-11-04",
+      "spot_rows": 867,
+      "spot_start": "2024-06-21",
+      "spot_end": "2026-11-04"
+    },
+    "STABLE": {
+      "funding_rows": 7943,
+      "funding_start": "2025-12-08",
+      "funding_end": "2026-11-04",
+      "perp_rows": 364,
+      "perp_start": "2025-11-06",
+      "perp_end": "2026-11-04",
+      "spot_rows": 332,
+      "spot_start": "2025-12-08",
+      "spot_end": "2026-11-04"
+    },
+    "TRUMP": {
+      "funding_rows": 15727,
+      "funding_start": "2025-01-18",
+      "funding_end": "2026-11-04",
+      "perp_rows": 656,
+      "perp_start": "2025-01-18",
+      "perp_end": "2026-11-04",
+      "spot_rows": 871,
+      "spot_start": "2024-05-31",
+      "spot_end": "2026-10-18"
+    },
+    "BTC": {
+      "funding_rows": 29971,
+      "funding_start": "2023-05-12",
+      "funding_end": "2026-11-04",
+      "perp_rows": 2269,
+      "perp_start": "2020-08-19",
+      "perp_end": "2026-11-04",
+      "spot_rows": 640,
+      "spot_start": "2025-02-03",
+      "spot_end": "2026-11-04"
+    },
+    "ETH": {
+      "funding_rows": 29971,
+      "funding_start": "2023-05-12",
+      "funding_end": "2026-11-04",
+      "perp_rows": 2269,
+      "perp_start": "2020-08-19",
+      "perp_end": "2026-11-04",
+      "spot_rows": 589,
+      "spot_start": "2025-03-26",
+      "spot_end": "2026-11-04"
+    }
+  }
+}
