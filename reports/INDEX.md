@@ -45,6 +45,7 @@
 
 - [ALL_BACKTESTS.md](ALL_BACKTESTS.md) — 所有可行策略族统一回测（carry + 方向性，含数据质量筛查与修正）
 - [ALL_BACKTESTS_ADVANCED.md](ALL_BACKTESTS_ADVANCED.md) — Walk-forward / 多重检验 / 容量区间
+- [STRATEGY_VERDICT.md](STRATEGY_VERDICT.md) — **策略最终取舍（Keep/Watch/Drop）**
 
 ## 版本
 
@@ -64,6 +65,7 @@
 - 启动：2026-10-30T16:40:40Z（虚拟 $1,000，PURR+HYPE carry），已运行约 15.7h；NAV **$997.29**，累计资金费 **+$0.419**，32 次结算全部正费率，对账 PASS；
 - 实时报告：[../paper/REPORT.md](../paper/REPORT.md)、最终报告 [../paper/FINAL_REPORT.md](../paper/FINAL_REPORT.md)、告警 [../paper/ALERTS.md](../paper/ALERTS.md)；
 - 30 天到期后看 gate：`python src/quantlab/paper.py gate`。
+
 
 
 
