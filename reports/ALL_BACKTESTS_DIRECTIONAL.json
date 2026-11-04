@@ -546,20 +546,20 @@
     },
     "VT_TSMOM_BTC_60_25": {
       "full": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": 1.392207,
+        "cagr": 0.150203,
+        "vol": 0.215519,
+        "sharpe": 0.757,
+        "mdd": 0.394414,
+        "final": 2392.2072
       },
       "oos": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": 0.200664,
+        "cagr": 0.066484,
+        "vol": 0.208729,
+        "sharpe": 0.4121,
+        "mdd": 0.335545,
+        "final": 1200.6639
       }
     },
     "ROT_top1_20_M": {
@@ -1068,110 +1068,110 @@
     },
     "RSI_BTC": {
       "full": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": 0.156895,
+        "cagr": 0.023658,
+        "vol": 0.372373,
+        "sharpe": 0.2495,
+        "mdd": 0.503749,
+        "final": 1156.8953
       },
       "oos": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": 0.195723,
+        "cagr": 0.064938,
+        "vol": 0.317757,
+        "sharpe": 0.3563,
+        "mdd": 0.286891,
+        "final": 1195.7231
       }
     },
     "BOLL_BTC": {
       "full": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": 0.17013,
+        "cagr": 0.025528,
+        "vol": 0.306999,
+        "sharpe": 0.2355,
+        "mdd": 0.451022,
+        "final": 1170.13
       },
       "oos": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.022508,
+        "cagr": -0.007981,
+        "vol": 0.256652,
+        "sharpe": 0.0968,
+        "mdd": 0.386403,
+        "final": 977.4917
       }
     },
     "RSI_ETH": {
       "full": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.194615,
+        "cagr": -0.034129,
+        "vol": 0.431142,
+        "sharpe": 0.1334,
+        "mdd": 0.581208,
+        "final": 805.3853
       },
       "oos": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.239999,
+        "cagr": -0.092076,
+        "vol": 0.482006,
+        "sharpe": 0.0374,
+        "mdd": 0.574954,
+        "final": 760.0012
       }
     },
     "BOLL_ETH": {
       "full": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.319777,
+        "cagr": -0.059951,
+        "vol": 0.414203,
+        "sharpe": 0.0576,
+        "mdd": 0.616428,
+        "final": 680.2226
       },
       "oos": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.410048,
+        "cagr": -0.169513,
+        "vol": 0.394523,
+        "sharpe": -0.2732,
+        "mdd": 0.557021,
+        "final": 589.9521
       }
     },
     "PAIR_BTC_ETH_z30": {
       "full": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.50592,
+        "cagr": -0.106956,
+        "vol": 0.168302,
+        "sharpe": -0.5882,
+        "mdd": 0.586971,
+        "final": 494.0796
       },
       "oos": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.242422,
+        "cagr": -0.093096,
+        "vol": 0.149861,
+        "sharpe": -0.577,
+        "mdd": 0.421511,
+        "final": 757.5777
       }
     },
     "PAIR_BTC_ETH_z60": {
       "full": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.402927,
+        "cagr": -0.079411,
+        "vol": 0.179116,
+        "sharpe": -0.3727,
+        "mdd": 0.51809,
+        "final": 597.073
       },
       "oos": {
-        "total_return": NaN,
-        "cagr": 0.0,
-        "vol": NaN,
-        "sharpe": 0.0,
-        "mdd": NaN,
-        "final": NaN
+        "total_return": -0.241976,
+        "cagr": -0.092908,
+        "vol": 0.166987,
+        "sharpe": -0.5007,
+        "mdd": 0.390739,
+        "final": 758.0237
       }
     }
   },

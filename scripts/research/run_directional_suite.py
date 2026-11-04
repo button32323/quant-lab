@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """全面方向性回测套件（现货日线，next-open 执行，含成本）。
 
@@ -73,7 +73,8 @@ def simulate_weights(open_df: pd.DataFrame, close_df: pd.DataFrame, target: pd.D
             desired = target.iloc[i - 1]
             cur_value = cash + sum(units[s] * float(open_df[s].iloc[i]) for s in symbols)
             for s in symbols:
-                w = float(desired.get(s, 0.0))
+                raw_w = desired.get(s, 0.0)
+                w = 0.0 if pd.isna(raw_w) else float(raw_w)
                 tv = w * cur_value
                 mv = units[s] * float(open_df[s].iloc[i])
                 delta = tv - mv
@@ -338,3 +339,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

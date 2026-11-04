@@ -56,6 +56,7 @@ python scripts/data/fetch_btc_daily.py
 python scripts/data/refresh_all.py               # 全量数据刷新
 python scripts/research/run_carry_suite.py         # 全面 carry 套件
 python scripts/research/run_directional_suite.py   # 全面方向性套件
+python scripts/research/run_advanced_validation.py   # Walk-forward/多重检验/容量
 python scripts/research/build_all_backtests_report.py  # 汇总报告
 python scripts/research/carry_capital_tiers.py    # A0 分档
 python scripts/research/carry_majors.py           # BTC/ETH carry
@@ -104,6 +105,7 @@ python scripts/research/multi_asset_momentum.py   # 多资产动量（淘汰）
 - 本仓库不保存任何私钥/助记词/API 密钥；
 - 不做未经 paper 验证的策略实盘；
 - 不承诺收益：历史回测 ≠ 未来表现。
+
 
 
 

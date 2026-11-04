@@ -66,6 +66,7 @@ def main() -> int:
 
     carry = json.loads((REPORTS / "ALL_BACKTESTS_CARRY.json").read_text(encoding="utf-8")) if (REPORTS / "ALL_BACKTESTS_CARRY.json").exists() else None
     direc = json.loads((REPORTS / "ALL_BACKTESTS_DIRECTIONAL.json").read_text(encoding="utf-8")) if (REPORTS / "ALL_BACKTESTS_DIRECTIONAL.json").exists() else None
+    adv = json.loads((REPORTS / "ALL_BACKTESTS_ADVANCED.json").read_text(encoding="utf-8")) if (REPORTS / "ALL_BACKTESTS_ADVANCED.json").exists() else None
 
     lines = ["# 全面回测报告（所有可行策略）", "",
              f"> 生成：{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} ｜ 工作区 `C:\\量化项目` ｜ 代码/数据可复现",
@@ -146,8 +147,26 @@ def main() -> int:
             lines.append(f"| {name} | {r['window']} | {pct(r['cagr'])} | {r['sharpe']:.2f} | {pct(r['mdd'])} | {money(r['capacity_max_capital'])} |")
         lines += ["", "（完整排名、两两组合、Bootstrap、成本敏感性见 `ALL_BACKTESTS_CARRY.md`）", ""]
 
+    if adv:
+        wfr = adv["walk_forward_rotation"]; wfp = adv["walk_forward_pairs"]; mt = adv["multiple_testing"]
+        lines += ["## 4.5 Walk-forward / 多重检验 / 容量", "",
+                  "### Walk-forward（每 90 天扩展窗口重选参数）", "",
+                  "| 策略族 | 全样本年化 | 全样本 Sharpe | 全样本 MDD | 样本外年化 | 样本外 Sharpe |", "|---|---:|---:|---:|---:|---:|",
+                  f"| 多资产轮动（WF 选参） | {wfr['full']['cagr']*100:+.1f}% | {wfr['full']['sharpe']:.2f} | {wfr['full']['mdd']*100:.1f}% | "
+                  f"{(wfr['oos']['cagr']*100 if wfr['oos'] else 0):+.1f}% | {(wfr['oos']['sharpe'] if wfr['oos'] else 0):.2f} |",
+                  f"| BTC-ETH 配对（WF 选参） | {wfp['full']['cagr']*100:+.1f}% | {wfp['full']['sharpe']:.2f} | {wfp['full']['mdd']*100:.1f}% | "
+                  f"{(wfp['oos']['cagr']*100 if wfp['oos'] else 0):+.1f}% | {(wfp['oos']['sharpe'] if wfp['oos'] else 0):.2f} |",
+                  "", "### 多重检验（62 个方向性策略）", "",
+                  f"- White Reality Check p 值：**{mt['white_reality_check_p']}**（观测最大 Sharpe {mt['observed_max_sharpe']}，null 95% 分位 {mt['null_max_p95']}）",
+                  f"- Bonferroni 近似阈值 z≈{mt['bonferroni_z']}；通过 Bonferroni 的策略数：{len(mt['bonferroni_pass'])}（但 OOS 表现普遍弱、回撤大）",
+                  "", "### 容量区间（最近 90 天，单资产 100% 权重口径）", "",
+                  "| 资产 | 30d 成交额 p5 | 中位 | p95 | 容量 p5 | 容量中位 | 容量 p95 |", "|---|---:|---:|---:|---:|---:|---:|"]
+        for coin, c in adv["capacity_ranges"].items():
+            lines.append(f"| {coin} | ${c['p5_vol30']:,.0f} | ${c['median_vol30']:,.0f} | ${c['p95_vol30']:,.0f} | ${c['capacity_p5']:,.0f} | ${c['capacity_median']:,.0f} | ${c['capacity_p95']:,.0f} |")
+        lines += ["", "> 组合容量 = min(单资产容量 × (1+1/lev)/权重)；A0 50/50 时约 $57k（按 PURR 中位成交额）。", ""]
+
     lines += ["## 5. 结论与建议", "",
-              "1. **不要用方向性策略替代 carry**：65 个方向性策略样本外不稳定、回撤大，扣成本后优势消失；",
+              "1. **不要用方向性策略替代 carry**：65 个策略 + walk-forward + 多重检验后仍无稳定优势（配对 WF 为负；轮动 WF 回撤 40%+）；",
               "2. **carry 内部按目标选**：A0（PURR+HYPE）年化最高、容量 $56k；B0（BTC/ETH）Sharpe 最高但年化低、容量百万级；ALL4 组合回撤最低；",
               "3. **所有结论都需 paper 验证**：当前 4 个 paper 账户在跑，30 天后看 gate；",
               "4. **继续跟踪数据与环境**：资金费转负是最大风险；",
@@ -161,4 +180,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
