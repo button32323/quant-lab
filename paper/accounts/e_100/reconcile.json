@@ -3,23 +3,23 @@
   "created_at": "2026-10-31T14:43:51+00:00",
   "assets": {
     "PURR": {
-      "expected_usd": 0.054598,
-      "actual_usd": 0.054598,
+      "expected_usd": 0.060919,
+      "actual_usd": 0.060919,
       "diff_usd": -0.0
     },
     "HYPE": {
-      "expected_usd": 0.088628,
-      "actual_usd": 0.088628,
+      "expected_usd": 0.096249,
+      "actual_usd": 0.096249,
       "diff_usd": 0.0
     },
     "BTC": {
-      "expected_usd": 0.019251,
-      "actual_usd": 0.019251,
+      "expected_usd": 0.021867,
+      "actual_usd": 0.021867,
       "diff_usd": 0.0
     },
     "ETH": {
-      "expected_usd": 0.020203,
-      "actual_usd": 0.020203,
+      "expected_usd": 0.022888,
+      "actual_usd": 0.022888,
       "diff_usd": 0.0
     }
   },

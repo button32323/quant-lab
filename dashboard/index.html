@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quant Monitor</title>
+<style>
+:root{
+  --bg0:#07070a; --bg1:#0d0d12; --bg2:#131318;
+  --card:rgba(28,28,34,.62); --card-2:rgba(20,20,26,.72);
+  --line:rgba(255,255,255,.085); --line-2:rgba(255,255,255,.04);
+  --ink:#f5f6f8; --dim:#a1a1aa; --dim2:#71717a;
+  --blue:#0a84ff; --green:#30d158; --red:#ff453a; --orange:#ff9f0a; --purple:#bf5af2;
+  --shadow:0 24px 70px rgba(0,0,0,.55), 0 2px 10px rgba(0,0,0,.4);
+  --radius:22px;
+}
+[data-theme="light"]{
+  --bg0:#e9e9ee; --bg1:#f2f2f6; --bg2:#fafafc;
+  --card:rgba(255,255,255,.72); --card-2:rgba(255,255,255,.86);
+  --line:rgba(0,0,0,.08); --line-2:rgba(0,0,0,.045);
+  --ink:#0b0b0f; --dim:#5c5c66; --dim2:#8a8a93;
+  --shadow:0 24px 60px rgba(20,20,35,.16), 0 2px 8px rgba(20,20,35,.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; min-height:100vh; color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(1200px 700px at 18% -10%, rgba(10,132,255,.16), transparent 60%),
+    radial-gradient(1000px 700px at 90% 110%, rgba(191,90,242,.13), transparent 60%),
+    radial-gradient(700px 500px at 55% 45%, rgba(48,209,88,.04), transparent 65%),
+    linear-gradient(180deg,var(--bg1),var(--bg0));
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+  background-image:linear-gradient(var(--line-2) 1px,transparent 1px),linear-gradient(90deg,var(--line-2) 1px,transparent 1px);
+  background-size:96px 96px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 45%,#000 10%,transparent 75%);
+}
+.wrap{max-width:1380px; margin:0 auto; padding:34px 28px 40px; position:relative}
+
+/* window chrome */
+.window{
+  border-radius:26px; border:1px solid var(--line); background:var(--card);
+  backdrop-filter:blur(42px) saturate(160%); -webkit-backdrop-filter:blur(42px) saturate(160%);
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.titlebar{
+  display:flex; align-items:center; gap:14px; padding:14px 18px;
+  border-bottom:1px solid var(--line-2); background:rgba(255,255,255,.015);
+}
+.lights{display:flex; gap:8px}
+.lights i{width:12px; height:12px; border-radius:50%; display:block; filter:saturate(1.1)}
+.lights .r{background:#ff5f57} .lights .y{background:#febc2e} .lights .g{background:#28c840}
+.title{font-size:13px; color:var(--dim); letter-spacing:.02em; margin-left:6px}
+.title b{color:var(--ink); font-weight:600}
+.titlebar .right{margin-left:auto; display:flex; align-items:center; gap:14px; color:var(--dim2); font-size:12px}
+.live{display:inline-flex; align-items:center; gap:6px; color:var(--dim)}
+.live .dot{width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 10px rgba(48,209,88,.7); animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1; transform:scale(1)}50%{opacity:.45; transform:scale(.8)}}
+.iconbtn{
+  width:30px; height:30px; border-radius:9px; border:1px solid var(--line); background:rgba(255,255,255,.03);
+  color:var(--dim); display:grid; place-items:center; cursor:pointer; transition:.2s;
+}
+.iconbtn:hover{color:var(--ink); border-color:rgba(255,255,255,.2)}
+
+.content{padding:26px 26px 24px}
+
+/* header */
+.head{display:flex; align-items:flex-end; gap:22px; margin-bottom:22px; flex-wrap:wrap}
+.kicker{font-size:12px; color:var(--dim2); letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px}
+.total{font-size:52px; line-height:1; font-weight:700; letter-spacing:-.025em; font-variant-numeric:tabular-nums}
+.total small{font-size:22px; color:var(--dim2); font-weight:500; margin-left:6px}
+.pill{
+  display:inline-flex; align-items:center; gap:6px; height:26px; padding:0 10px; border-radius:999px;
+  font-size:12.5px; font-weight:600; font-variant-numeric:tabular-nums;
+  border:1px solid transparent;
+}
+.pill.up{color:var(--green); background:rgba(48,209,88,.10); border-color:rgba(48,209,88,.18)}
+.pill.down{color:var(--red); background:rgba(255,69,58,.10); border-color:rgba(255,69,58,.18)}
+.pill.flat{color:var(--dim); background:rgba(255,255,255,.04); border-color:var(--line)}
+.head .meta{margin-left:auto; text-align:right; color:var(--dim2); font-size:12px; line-height:1.7}
+.head .meta b{color:var(--dim); font-weight:500}
+
+/* grid */
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.card{
+  position:relative; border-radius:var(--radius); border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--card-2),var(--card));
+  backdrop-filter:blur(28px) saturate(150%); -webkit-backdrop-filter:blur(28px) saturate(150%);
+  padding:20px 20px 18px; overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
+}
+.card::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:radial-gradient(600px 180px at 20% -20%, rgba(255,255,255,.06), transparent 60%);
+}
+.card:hover{transform:translateY(-2px); border-color:rgba(255,255,255,.16); box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.card.main{grid-column:span 2; padding:24px 24px 22px}
+.card.system{grid-column:span 1}
+.card.mini{padding:18px}
+
+.cardhead{display:flex; align-items:flex-start; gap:12px; margin-bottom:14px}
+.cardhead .name{font-size:14px; font-weight:600; letter-spacing:.01em}
+.cardhead .sub{font-size:11.5px; color:var(--dim2); margin-top:3px}
+.cardhead .chip{margin-left:auto; display:inline-flex; align-items:center; gap:5px; font-size:11px; color:var(--dim);
+  border:1px solid var(--line); background:rgba(255,255,255,.03); padding:4px 8px; border-radius:999px; white-space:nowrap}
+.chip .dot{width:6px; height:6px; border-radius:50%; background:var(--green)}
+.chip .dot.off{background:var(--red)}
+
+.nav{font-size:34px; font-weight:700; letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1.05}
+.card.main .nav{font-size:46px}
+.navrow{display:flex; align-items:center; gap:10px; margin-bottom:10px}
+.card.mini .nav{font-size:27px}
+
+.spark{width:100%; height:64px; display:block; margin:8px 0 14px}
+.card.mini .spark{height:42px; margin:6px 0 12px}
+
+.metrics{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:6px}
+.card.mini .metrics{grid-template-columns:repeat(2,1fr)}
+.metric{background:rgba(255,255,255,.025); border:1px solid var(--line-2); border-radius:12px; padding:9px 10px}
+.metric .k{font-size:10.5px; color:var(--dim2); margin-bottom:4px; letter-spacing:.02em}
+.metric .v{font-size:14px; font-weight:600; font-variant-numeric:tabular-nums}
+.metric .v small{font-size:10.5px; color:var(--dim2); font-weight:500}
+.card.main .metric .v{font-size:15px}
+
+.mrow{display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line-2); font-size:12.5px}
+.mrow:last-child{border-bottom:0}
+.mrow .k{color:var(--dim2)}
+.mrow .v{font-weight:600; font-variant-numeric:tabular-nums}
+.good{color:var(--green)} .bad{color:var(--red)} .warn{color:var(--orange)}
+
+.ringwrap{display:flex; align-items:center; gap:14px; margin:6px 0 12px}
+.ring{width:64px; height:64px; flex:0 0 auto}
+.ring text{font-family:inherit}
+.ring .track{stroke:rgba(255,255,255,.08); fill:none; stroke-width:6}
+.ring .bar{fill:none; stroke:var(--blue); stroke-width:6; stroke-linecap:round; transform:rotate(-90deg); transform-origin:50% 50%}
+.ringinfo .big{font-size:18px; font-weight:650}
+.ringinfo .small{font-size:11.5px; color:var(--dim2)}
+
+.foot{display:flex; align-items:center; gap:14px; margin-top:20px; color:var(--dim2); font-size:11.5px; flex-wrap:wrap}
+.foot .sep{width:1px; height:12px; background:var(--line)}
+.foot b{color:var(--dim); font-weight:500}
+
+.sectiontitle{font-size:12px; color:var(--dim2); letter-spacing:.1em; text-transform:uppercase; margin:22px 2px 10px}
+.small-note{font-size:11px; color:var(--dim2); margin-top:10px; line-height:1.6}
+
+@media(max-width:1100px){
+  .grid{grid-template-columns:1fr 1fr}
+  .card.main{grid-column:span 2; grid-row:auto}
+  .card.system{grid-column:span 2}
+}
+@media(max-width:720px){
+  .wrap{padding:14px}
+  .content{padding:18px}
+  .grid{grid-template-columns:1fr}
+  .card.main,.card.system{grid-column:span 1}
+  .total{font-size:40px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="window">
+    <div class="titlebar">
+      <div class="lights"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+      <div class="title"><b>Quant Monitor</b> · Paper Portfolio</div>
+      <div class="right">
+        <span class="live"><span class="dot"></span><span id="liveText">LIVE</span></span>
+        <span id="clock">--:--</span>
+        <button class="iconbtn" id="themeBtn" title="切换深浅色">◐</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="head">
+        <div>
+          <div class="kicker">Total Portfolio</div>
+          <div class="total" id="totalNav">$—</div>
+        </div>
+        <div id="totalPill" class="pill flat">—</div>
+        <div class="meta">
+          <div>累计资金费 <b id="totalFunding">—</b></div>
+          <div>数据更新 <b id="updated">—</b></div>
+        </div>
+      </div>
+
+      <div class="grid" id="grid">
+        <!-- JS 渲染 -->
+      </div>
+
+      <div class="foot">
+        <span>仅 paper 模拟 · 不接实盘</span><span class="sep"></span>
+        <span>4 个虚拟账户</span><span class="sep"></span>
+        <span id="footRunner">runner —</span><span class="sep"></span>
+        <span>数据源：Hyperliquid 公开 API</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const fmtMoney = (v) => v == null ? '—' : '$' + Number(v).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+const fmtPct = (v) => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toFixed(3) + '%';
+const cls = (v) => v > 0.0001 ? 'up' : (v < -0.0001 ? 'down' : 'flat');
+
+function spark(series, up){
+  if(!series || series.length < 2) return `<svg class="spark" viewBox="0 0 200 60" preserveAspectRatio="none"></svg>`;
+  const w = 200, h = 60, min = Math.min(...series), max = Math.max(...series);
+  const span = (max - min) || 1;
+  const pts = series.map((v, i) => [i / (series.length - 1) * w, h - 6 - (v - min) / span * (h - 12)]);
+  const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+  const area = d + ` L ${w} ${h} L 0 ${h} Z`;
+  const color = up ? 'var(--green)' : 'var(--red)';
+  const gid = 'g' + Math.random().toString(36).slice(2, 8);
+  return `<svg class="spark" viewBox="0 0 200 60" preserveAspectRatio="none">
+    <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${up ? 'rgba(48,209,88,.28)' : 'rgba(255,69,58,.26)'}"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient></defs>
+    <path d="${area}" fill="url(#${gid})"></path>
+    <path d="${d}" fill="none" stroke="${color}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>`;
+}
+
+function ring(pct, label){
+  const r = 26, c = 2 * Math.PI * r;
+  const off = c * (1 - Math.min(100, Math.max(0, pct)) / 100);
+  return `<svg class="ring" viewBox="0 0 64 64">
+    <circle class="track" cx="32" cy="32" r="${r}"></circle>
+    <circle class="bar" cx="32" cy="32" r="${r}" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"></circle>
+    <text x="32" y="36" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">${label}</text>
+  </svg>`;
+}
+
+function miniCard(a){
+  const up = (a.ret || 0) >= 0;
+  return `<div class="card mini">
+    <div class="cardhead">
+      <div><div class="name">${a.name}</div><div class="sub">${a.sub}</div></div>
+      <span class="chip"><span class="dot"></span>${a.reconcile}</span>
+    </div>
+    <div class="navrow">
+      <div class="nav">${fmtMoney(a.nav)}</div>
+      <span class="pill ${cls(a.ret)}">${fmtPct(a.ret)}</span>
+    </div>
+    ${spark(a.series, up)}
+    <div class="metrics">
+      <div class="metric"><div class="k">累计资金费</div><div class="v">${fmtMoney(a.funding)}</div></div>
+      <div class="metric"><div class="k">资金费年化</div><div class="v">${a.fund_ann.toFixed(1)}%</div></div>
+      <div class="metric"><div class="k">建仓成本覆盖</div><div class="v">${Math.round(a.coverage)}%</div></div>
+      <div class="metric"><div class="k">第 / 30 天</div><div class="v">${a.days.toFixed(1)}<small> / 30</small></div></div>
+    </div>
+  </div>`;
+}
+
+function mainCard(m){
+  const up = m.ret >= 0;
+  return `<div class="card main">
+    <div class="cardhead">
+      <div><div class="name">${m.name}</div><div class="sub">${m.sub}</div></div>
+      <span class="chip"><span class="dot"></span>${m.reconcile} · ${m.settlements} 次结算</span>
+    </div>
+    <div class="navrow">
+      <div class="nav">${fmtMoney(m.nav)}</div>
+      <span class="pill ${cls(m.ret)}">${fmtPct(m.ret)}</span>
+    </div>
+    ${spark(m.series, up)}
+    <div class="metrics">
+      <div class="metric"><div class="k">累计资金费</div><div class="v">${fmtMoney(m.funding)}</div></div>
+      <div class="metric"><div class="k">资金费年化</div><div class="v">${m.fund_ann.toFixed(1)}%</div></div>
+      <div class="metric"><div class="k">价差 MTM</div><div class="v">${fmtMoney(m.mtm)}</div></div>
+      <div class="metric"><div class="k">最大回撤</div><div class="v">${m.mdd.toFixed(2)}%</div></div>
+    </div>
+    <div class="mrow"><span class="k">建仓成本覆盖</span><span class="v">${Math.round(m.coverage)}%</span></div>
+    <div class="mrow"><span class="k">正费率占比</span><span class="v">${m.pos_share}%</span></div>
+  </div>`;
+}
+
+function systemCard(s, accounts, main){
+  const on = s.online;
+  const oldest = Math.max(s.main_runner ?? 999, s.acct_runner ?? 999);
+  const passes = accounts.filter(a => a.reconcile === 'PASS').length + (main && main.reconcile === 'PASS' ? 1 : 0);
+  return `<div class="card system">
+    <div class="cardhead"><div><div class="name">系统状态</div><div class="sub">runner / 对账 / 告警</div></div>
+      <span class="chip"><span class="dot ${on ? '' : 'off'}"></span>${on ? 'ONLINE' : 'OFFLINE'}</span></div>
+    <div class="mrow"><span class="k">主 runner 心跳</span><span class="v ${s.main_runner > 90 ? 'bad' : 'good'}">${s.main_runner == null ? '—' : s.main_runner + ' 分钟前'}</span></div>
+    <div class="mrow"><span class="k">多账户 runner</span><span class="v ${s.acct_runner > 90 ? 'bad' : 'good'}">${s.acct_runner == null ? '—' : s.acct_runner + ' 分钟前'}</span></div>
+    <div class="mrow"><span class="k">对账</span><span class="v ${passes === 4 ? 'good' : 'warn'}">${passes} / 4 PASS</span></div>
+    <div class="mrow"><span class="k">告警</span><span class="v good">无</span></div>
+    <div class="sectiontitle" style="margin:14px 0 4px">30 天验证进度</div>
+    <div class="ringwrap">
+      ${ring(main.gate_pct, main.days.toFixed(1))}
+      <div class="ringinfo">
+        <div class="big">第 ${main.days.toFixed(1)} / 30 天</div>
+        <div class="small">主账户 ${main.gate_date} · $100 账户 ${accounts[0].gate_date} 到期</div>
+      </div>
+    </div>
+    <div class="small-note">${on ? '数据每小时自动更新；如心跳超过 90 分钟会显示 OFFLINE。' : 'runner 已停止，请重新启动 paper runner。'}</div>
+  </div>`;
+}
+
+async function refresh(){
+  try{
+    const r = await fetch('/api/summary', {cache:'no-store'});
+    const d = await r.json();
+    const t = d.totals;
+    $('#totalNav').innerHTML = fmtMoney(t.nav);
+    $('#totalPill').className = 'pill ' + cls(t.ret);
+    $('#totalPill').textContent = fmtPct(t.ret);
+    $('#totalFunding').textContent = fmtMoney(t.funding);
+    $('#updated').textContent = d.now;
+    $('#clock').textContent = new Date().toLocaleTimeString('zh-CN', {hour:'2-digit', minute:'2-digit'});
+    $('#footRunner').textContent = d.system.online ? 'runner 在线' : 'runner 离线';
+    $('#grid').innerHTML = mainCard(d.main) + systemCard(d.system, d.accounts, d.main) + d.accounts.map(miniCard).join('');
+  }catch(e){
+    $('#liveText').textContent = 'OFFLINE';
+  }
+}
+
+// theme
+const root = document.documentElement;
+const qsTheme = new URLSearchParams(location.search).get('theme');
+if(qsTheme) root.dataset.theme = qsTheme;
+const saved = localStorage.getItem('qm-theme');
+if(saved && !qsTheme) root.dataset.theme = saved;
+$('#themeBtn').onclick = () => {
+  const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+  root.dataset.theme = next; localStorage.setItem('qm-theme', next);
+};
+
+refresh();
+setInterval(refresh, 10000);
+</script>
+</body>
+</html>

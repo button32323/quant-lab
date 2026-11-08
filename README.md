@@ -1,4 +1,4 @@
-﻿# 量化项目（新）
+# 量化项目（新）
 
 [![tests](https://github.com/button32323/quant-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/button32323/quant-lab/actions/workflows/tests.yml) [![repo](https://img.shields.io/badge/GitHub-button32323%2Fquant--lab-blue)](https://github.com/button32323/quant-lab)
 
@@ -19,6 +19,7 @@
 3. **[reports/FAQ.md](reports/FAQ.md)** — 收益/风险/最低本金等常见问题
 4. **[paper/REPORT.md](paper/REPORT.md)** — 30 天 paper 验证实时状态
 5. **[docs/OPERATIONS.md](docs/OPERATIONS.md)** — 运行与复现手册
+6. **[dashboard/README.md](dashboard/README.md)** — Apple 风格监控面板（运行 `dashboard/start.ps1`）
 
 ## 快速开始
 
