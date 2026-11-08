@@ -23,7 +23,7 @@ powershell -ExecutionPolicy Bypass -File C:\量化项目\dashboard\start.ps1
 - **主账户 $1,000**：NAV、收益、资金费、年化、MTM、回撤、建仓成本覆盖、正费率占比、NAV 走势；
 - **3 个 $100 账户**：NAV、收益、资金费、年化、覆盖、第 x/30 天、迷你走势；
 - **系统状态**：两个 runner 心跳（>90 分钟显示 OFFLINE）、对账 4/4 PASS、告警、30 天 gate 进度；
-- 每 10 秒自动刷新；右上角可切换深/浅色；`?theme=light` 可直接打开浅色。
+- 每 2 秒 SSE 实时推送（文件一变立刻推），右上角可切换深/浅色；`?theme=light` 可直接打开浅色；`?snap=1` 用于截图。
 
 ## 数据来源
 

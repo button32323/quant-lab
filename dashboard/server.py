@@ -151,6 +151,8 @@ class Handler(SimpleHTTPRequestHandler):
         pass
 
     def do_GET(self):  # noqa: N802
+        if self.path.split("?")[0] == "/api/stream":
+            return self._sse()
         if self.path.split("?")[0] == "/api/summary":
             data = json.dumps(summary(), ensure_ascii=False).encode("utf-8")
             self.send_response(200)
@@ -163,6 +165,30 @@ class Handler(SimpleHTTPRequestHandler):
         if self.path in ("/", ""):
             self.path = "/index.html"
         return super().do_GET()
+
+    def _sse(self) -> None:
+        """Server-Sent Events：文件一变就推，最多 2 秒一次。"""
+        self.send_response(200)
+        self.send_header("Content-Type", "text/event-stream; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Connection", "keep-alive")
+        self.end_headers()
+        try:
+            self.wfile.write(b"retry: 3000\n\n")
+            self.wfile.flush()
+            last = None
+            while True:
+                data = json.dumps(summary(), ensure_ascii=False)
+                if data != last:
+                    self.wfile.write(("data: " + data + "\n\n").encode("utf-8"))
+                    self.wfile.flush()
+                    last = data
+                else:
+                    self.wfile.write(b": ping\n\n")
+                    self.wfile.flush()
+                time.sleep(2)
+        except (BrokenPipeError, ConnectionResetError, OSError):
+            pass
 
 
 def main() -> int:
